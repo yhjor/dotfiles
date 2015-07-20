@@ -1,6 +1,9 @@
 # OS
 .DS_Store
 
+# Git
+*.orig
+
 ### Node ###
 # Logs
 logs
