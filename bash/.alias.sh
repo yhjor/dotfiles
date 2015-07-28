@@ -1,3 +1,12 @@
+rm_rf() {
+  if [ -z $1 ]; then
+    return 'Please enter files to be deleted'
+  else
+    rm -rf $1
+  fi
+}
+
+
 alias ls='ls -a'
 alias home='cd ~'
 alias ~='cd ~'
@@ -9,6 +18,7 @@ alias reload='chmod +x ~/.bashrc && . ~/.bashrc'
 alias desktop='cd ~/Desktop'
 alias i='npm i'
 alias g='gulp'
+alias rm=rm_rf
 
 # Git related
 git_fetch() {
@@ -44,20 +54,40 @@ git_checkout() {
   fi
 }
 
+git_push() {
+  if [ -z $1 ]; then
+    return 'Please enter a origin brnach name to push'
+  else
+    git push origin $1
+  fi
+}
+
+git_new_branch() {
+  if [ -z $1 ]; then
+    return 'Please enter a new brnach name to checkout'
+  else
+    git checkout -b $1
+  fi
+}
+
+alias x='gitx'
 alias log='git log'
 alias logs='git log --oneline'
 alias status='git status -sb'
 alias branch='git branch'
-alias push='git push origin master'
 alias pull='git pull origin master'
 alias reset='git reset --soft HEAD^'
 alias abort='git rebase --abort'
 alias continue='git rebase --continue'
 alias mergetool='git mergetool'
+alias stash='git stash'
+alias pop='git stash pop'
+alias push=git_push
 alias fetch=git_fetch
-alias squash=git_rebase
+alias rebase=git_rebase
 alias rename=git_change_branch
-alias switch=git_checkout
+alias create=git_new_branch
+alias checkout=git_checkout
 
 # Development related
 alias inspector='node-inspector --preload-false'
