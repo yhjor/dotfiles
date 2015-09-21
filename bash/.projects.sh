@@ -1,7 +1,6 @@
 # Project related
 alias projects='cd ~/projects'
 alias auto='cd ~/projects/dotfiles'
-alias starter='cd ~/projects/react-starter'
 
 # Job special
 alias draft=draft
@@ -10,6 +9,8 @@ alias wlp='cd ~/projects/m800-white-label-portal && direnv allow'
 alias mdebug='node --debug bin/www'
 alias gt='NODE_ENV=test gulp'
 alias test='npm run test'
+alias start='npm start'
+alias dev='npm run development'
 
 draft() {
   if [ -z $1 ]; then
