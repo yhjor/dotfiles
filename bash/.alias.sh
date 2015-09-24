@@ -6,7 +6,6 @@ rm_rf() {
   fi
 }
 
-
 alias ls='ls -a'
 alias home='cd ~'
 alias ~='cd ~'
@@ -21,6 +20,25 @@ alias g='gulp'
 alias rm=rm_rf
 
 # Git related
+alias x='gitx'
+alias log='git log'
+alias logs='git log --oneline'
+alias status='git status -sb'
+alias branch='git branch'
+alias pull='git pull origin master'
+alias reset='git reset --soft HEAD^'
+alias abort='git rebase --abort'
+alias continue='git rebase --continue'
+alias mergetool='git mergetool'
+alias stash='git stash'
+alias pop='git stash pop'
+alias push=git_push
+alias fetch=git_fetch
+alias rebase=git_rebase
+alias rename=git_change_branch
+alias create=git_new_branch
+alias checkout=git_checkout
+
 git_fetch() {
   if [ -z $1 ]; then
     return 'Please enter a remote branch'

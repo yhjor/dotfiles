@@ -13,4 +13,5 @@ git config --global core.excludesfile ./bash/.gitignore
 . ~/projects/dotfiles/bash/.colors.sh
 . ~/projects/dotfiles/bash/.prompt.sh
 . ~/projects/dotfiles/bash/.alias.sh
+. ~/projects/dotfiles/bash/.development.sh
 . ~/projects/dotfiles/bash/.projects.sh
