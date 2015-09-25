@@ -2,6 +2,7 @@ alias use='nvm use'
 alias cleanup='rm node_modules'
 alias g='gulp'
 alias da='direnv allow'
+alias x='gitx'
 
 # npm related
 alias jest='npm run jest'
