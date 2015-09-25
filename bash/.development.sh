@@ -1,5 +1,0 @@
-alias build='. ~/projects/dotfiles/bash/.packages.sh'
-alias jest='npm run jest'
-alias use='nvm use'
-alias cleanup='rm node_modules'
-alias dev='npm run development'
