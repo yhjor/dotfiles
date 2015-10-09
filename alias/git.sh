@@ -1,6 +1,8 @@
+alias g=git
 alias reset='git reset --soft HEAD^'
 alias stash='git stash'
 alias pop='git stash pop'
+alias origin='git branch -vv'
 alias fetch=git_fetch
 
 # function definition
