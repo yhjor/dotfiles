@@ -4,3 +4,4 @@ autocomplete-paths
 line-jumper
 jumpy
 file-type-icons
+editorconfig
