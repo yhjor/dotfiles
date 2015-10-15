@@ -19,6 +19,7 @@ alias draft=draft
 alias mpush=mpush
 alias mdebug='node --debug bin/www'
 alias wlp='cd ~/projects/m800-white-label-portal && direnv allow'
+alias hf='cd ~/projects/m800-white-label-portal-hotfix && direnv allow'
 
 # Otras
 alias dotfiles='cd ~/projects/dotfiles'
