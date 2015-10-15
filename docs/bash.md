@@ -1,2 +1,3 @@
 ag
 ccat
+trash-cli
