@@ -7,4 +7,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias reload='chmod +x ~/.bashrc && . ~/.bashrc'
 alias desktop='cd ~/Desktop && open .'
+alias bashrc='vi ~/.bashrc'
+alias bash_profile='vi ~/.bash_profile'
 alias t=trash
