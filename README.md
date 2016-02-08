@@ -8,7 +8,7 @@
 
 1. Clone this project
 2. `npm install && npm run build`
-3. Execute Node.js in root directory: `node .`
+3. Execute Node.js in root directory: `node .` (alias `dot`)
 4. Enter personal info and preferences (~/.gituser, ~/.ruby-version, and ~/.npmrc will be generated)
 5. `. ~/.bash_profile`
 
@@ -26,7 +26,7 @@
 
 ### OSX settings (dots/.osx)
 
-Toggle your preferred settings:
+Just toggle your preferred settings and run `dot preinstall osx`:
 
 	# Disable the sound effects on boot
 	sudo nvram SystemAudioVolume=" "
@@ -37,23 +37,23 @@ Toggle your preferred settings:
 ### Git Config (dots/.gitconfig)
 
 	[branch]
-		autosetuprebase = always
-		autosetupmerge = always
+	  autosetuprebase = always
+	  autosetupmerge = always
 
 	[apply]
 	  whitespace = fix
 
-  [push]
-		default = current
+    [push]
+	  default = current
 
-  [include]
-   	path = ~/.gituser
+	[include]
+   	  path = ~/.gituser
 
 	[alias]
-		co = !sh -c \"git checkout $(git branch | peco --select-1)\"
-   	sq = !sh -c \"git rebase -i HEAD~$1\"
- 		clear = checkout -- .
-   	create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+	  co = !sh -c \"git checkout $(git branch | peco --select-1)\"
+   	  sq = !sh -c \"git rebase -i HEAD~$1\"
+ 	  clear = checkout -- .
+      create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
 
 ### Terminal Config (dots/.bash_prompt)
 
@@ -72,7 +72,7 @@ You can change the terminal style in .bash_prompt easily.
 	# Get public ip
 	alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-  # Mute sound
+    # Mute sound
 	alias mute="osascript -e 'set volume output muted true'"
 
 	# Show/hide hidden files in Finder
@@ -81,30 +81,30 @@ You can change the terminal style in .bash_prompt easily.
 
 	# application shorthand
 	alias t=trash
-  alias port='netstat -anp tcp | grep'
+	alias port='netstat -anp tcp | grep'
 
-  # General
+	# General
 	alias ..='cd ..'
 	alias desktop='cd ~/Desktop && open .'
 
 ### Packages (dots/.packages)
 
-	  'apm':
+    'apm':
 	    - linter-eslint
 	    - react
-
-	  'brew':
-	    - git
-	    - mongodb
-
-	  'cask':
-	    - java
-	    - google-chrome
-	    - atom
-	    - slack
-
-	  'npm':
-	    - babel-cli
-	    - webdriverio
+	
+	'brew':
+		- git
+		- mongodb
+	
+	'cask':
+		- java
+		- google-chrome
+		- atom
+		- slack
+	
+	'npm':
+		- babel-cli
+		- webdriverio
 
 Enjoy!
