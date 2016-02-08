@@ -1,0 +1,10 @@
+# Built files
+lib
+
+# Keep only necessary configs for Atom
+dots/.atom/*
+!dots/.atom/init.coffee
+!dots/.atom/config.cson
+!dots/.atom/keymap.cson
+!dots/.atom/snippets.cson
+!dots/.atom/styles.less
