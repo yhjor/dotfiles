@@ -41,37 +41,39 @@ Toggle your preferred settings:
 		autosetupmerge = always
 
 	[apply]
-	  	whitespace = fix
+	  whitespace = fix
 
-  	[push]
+  [push]
 		default = current
 
-  	[include]
-   		path = ~/.gituser
+  [include]
+   	path = ~/.gituser
 
 	[alias]
 		co = !sh -c \"git checkout $(git branch | peco --select-1)\"
-	   sq = !sh -c \"git rebase -i HEAD~$1\"
-   		clear = checkout -- .
-	   create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+   	sq = !sh -c \"git rebase -i HEAD~$1\"
+ 		clear = checkout -- .
+   	create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
 
 ### Terminal Config (dots/.bash_prompt)
 
 The above files gave the look and feel for development using Git:
 
-	 `<path>/<current dir> (branch name):`
+![alt tag](https://raw.github.com/yhjor1212/dotfiles/master/docs/git_clean.png)
 
 The line will look like this if there are any new changes:
 
-	 `<path>/<current dir> (branch name *):`
+![alt tag](https://raw.github.com/yhjor1212/dotfiles/master/docs/git_dirty.png)
+
+You can change the terminal style in .bash_prompt easily.
 
 ### Alias (dots/.alias)
 
 	# Get public ip
 	alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-    # Mute sound
-  	alias mute="osascript -e 'set volume output muted true'"
+  # Mute sound
+	alias mute="osascript -e 'set volume output muted true'"
 
 	# Show/hide hidden files in Finder
 	alias show-hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -79,9 +81,9 @@ The line will look like this if there are any new changes:
 
 	# application shorthand
 	alias t=trash
-  	alias port='netstat -anp tcp | grep'
+  alias port='netstat -anp tcp | grep'
 
-  	# General
+  # General
 	alias ..='cd ..'
 	alias desktop='cd ~/Desktop && open .'
 
