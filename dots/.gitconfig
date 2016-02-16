@@ -20,31 +20,33 @@
   ls = branch -vv
 	fp = push --force origin
 
-  pop = stash pop
-  clear = checkout -- .
-  amend = commit --amend
-  logs = log --oneline --decorate
-  update = pull --rebase
-  abort = rebase --abort
-	continue = rebase --continue
-  rename = branch -m
-  merged = branch --merged
-  not-merged = branch --no-merged
-  current = rev-parse --symbolic-full-name --abbrev-ref HEAD
-  origin = !sh -c \"git rev-parse --abbrev-ref --symbolic-full-name @{u} | sed 's/origin\\///g'\"
+		delete = !sh -c \"git branch -D $(git branch | peco --select-1)\"
+		diffs = "!git diff --color $@ | diff-so-fancy"
+		pop = stash pop
+		clear = checkout -- .
+		amend = commit --amend
+		logs = log --oneline --decorate
+		update = pull --rebase
+		abort = rebase --abort
+		continue = rebase --continue
+		rename = branch -m
+		merged = branch --merged
+		not-merged = branch --no-merged
+		current = rev-parse --symbolic-full-name --abbrev-ref HEAD
+		origin = !sh -c \"git rev-parse --abbrev-ref --symbolic-full-name @{u} | sed 's/origin\\///g'\"
 
-	create = !sh -c \"branch=$(git branch | peco --select-1) && git fetch origin ${branch}:${1} && git checkout $1 && git branch -u origin/$(branch) fix/$1\"
+		create = !sh -c \"branch=$(git branch | peco --select-1) && git fetch origin ${branch}:${1} && git checkout $1 && git branch -u origin/$(branch) fix/$1\"
 
-  set-origin = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
-	create-feature = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
-	create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
-	clear-done = !sh -c \"git branch --merged | grep feature/ | grep -v \\* | xargs -n 1 git branch -d\"
-	clear-fixed = !sh -c \"git branch --merged | grep fix/ | grep -v \\* | xargs -n 1 git branch -d\"
-  clear-merged = !sh -c \"git clear-done && git clear-fixed\"
+		set-origin = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
+		create-feature = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
+		create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+		clear-done = !sh -c \"git branch --merged | grep feature/ | grep -v \\* | xargs -n 1 git branch -d\"
+		clear-fixed = !sh -c \"git branch --merged | grep fix/ | grep -v \\* | xargs -n 1 git branch -d\"
+		clear-merged = !sh -c \"git clear-done && git clear-fixed\"
 
-  publish = !sh -c \"git push origin @:refs/for/$(git origin)\"
-  publish-draft = !sh -c \"git push origin @:refs/drafts/$(git origin)\"
-	publish-to = !sh -c \"git push origin @:refs/for/$(git branch | peco)\"
+		publish = !sh -c \"git push origin @:refs/for/$(git origin)\"
+		publish-draft = !sh -c \"git push origin @:refs/drafts/$(git origin)\"
+		publish-to = !sh -c \"git push origin @:refs/for/$(git branch | peco)\"
 
 [color]
   ui = auto
