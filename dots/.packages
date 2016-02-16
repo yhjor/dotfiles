@@ -29,6 +29,7 @@
   - tree
   - fpp
   - peco
+  - gnu-sed
 
 'cask':
   - java
@@ -42,7 +43,7 @@
   - slack
   - evernote
   - cakebrew
-  - spotify
+  - gitkraken
 
 'npm':
   - gulp
@@ -56,6 +57,7 @@
   - npm-name-cli
   - nativefier
   - pageres-cli
+  - diff-so-fancy
 
 'osx':
   - 1Password
@@ -83,6 +85,7 @@
   - Numbers
   - OmniFocus
   - Paste
+  - Paw
   - Pomodoro Time
   - Pull - Menu Timer
   - Raindrop.io
@@ -93,3 +96,4 @@
   - Twitter
   - Unclutter
   - Grammarly
+  - xDiagram
