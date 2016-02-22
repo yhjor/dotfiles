@@ -1,5 +1,5 @@
-import { echo } from 'shelljs';
 import fs from 'fs';
+import logatim from 'logatim';
 import prompt from 'prompt';
 import { ArgumentNullError } from 'common-errors';
 
@@ -20,7 +20,7 @@ class Initializer {
     return new Promise((resolve, reject) => {
       fs.writeFile(`${process.env.HOME}/${fileName}`, content, err => {
         if (err) return reject(`Fail to write ${fileName} ${err.stack}`);
-        echo(`Generate ${fileName} success`);
+        logatim.green.info(`Generate ${fileName} success`);
         resolve();
       });
     });
@@ -54,10 +54,11 @@ class Initializer {
   run() {
     this.generate()
       .then(results => {
-        results.forEach(result => echo(result));
+        logatim.setLevel('info');
+        results.forEach(result => logatim.green.info(result));
       })
       .catch(errors => {
-        errors.forEach(error => echo(error));
+        errors.forEach(error => logatim.red.warn(error));
       });
   }
 }

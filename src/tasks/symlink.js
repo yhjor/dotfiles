@@ -1,6 +1,7 @@
-import { echo, exec } from 'shelljs';
+import { exec } from 'shelljs';
 import path from 'path';
 import fs from 'fs';
+import logatim from 'logatim';
 import { ArgumentNullError } from 'common-errors';
 
 const DOTS_NAME = 'dots';
@@ -15,7 +16,8 @@ class Symlink {
       const basename = path.basename(file);
       const filePath = path.join(targetFolder, basename);
 
-      echo(`Linking ${filePath} to your home directory...`);
+      logatim.setLevel('info');
+      logatim.green.info(`Linking ${filePath} to your home directory...`);
       exec(`ln -sf ${filePath} ~`);
     });
   }

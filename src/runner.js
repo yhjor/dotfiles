@@ -1,5 +1,6 @@
 import fs from 'fs';
-import { echo, exit, which } from 'shelljs';
+import { exit, which } from 'shelljs';
+import logatim from 'logatim';
 
 import initializer from './tasks/initializer';
 import symlink from './tasks/symlink';
@@ -16,14 +17,14 @@ export const OPTIONS = {
 class Runner {
   checkGit() {
     if (!which('git')) {
-      echo('This script requires git');
+      logatim.red.warn('This script requires git');
       exit(1);
     }
   }
 
   checkNpm() {
     if (!which('npm')) {
-      echo('This script requires npm');
+      logatim.red.warn('This script requires npm');
       exit(1);
     }
   }
