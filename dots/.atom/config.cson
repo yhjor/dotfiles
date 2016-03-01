@@ -5,6 +5,7 @@
     audioBeep: false
     disabledPackages: [
       "linter-jscs"
+      "language-babel"
     ]
     packagesWithKeymapsDisabled: [
       "activate-power-mode"
