@@ -1,19 +1,21 @@
 import { exec } from 'shelljs';
 import fs from 'fs';
+import path from 'path';
 import yaml from 'js-yaml';
 import { ArgumentNullError } from 'common-errors';
 
 const INSTALLATION_FILE = '.packages';
+const DOTS_NAME = 'dots';
 
 class Installer {
   constructor() {
-    this.packages = this.readPackages(`${process.env.HOME}/${INSTALLATION_FILE}`);
+    this.packages = this.readPackages(path.resolve(__dirname, '..', DOTS_NAME, INSTALLATION_FILE));
   }
 
-  readPackages(path) {
-    if (!path) return new ArgumentNullError('path is not exist');
+  readPackages(packagePath) {
+    if (!packagePath) return new ArgumentNullError('packagePath is not exist');
 
-    const readFile = fs.readFileSync(path, 'utf8');
+    const readFile = fs.readFileSync(packagePath, 'utf8');
     return yaml.safeLoad(readFile);
   }
 
