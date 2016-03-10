@@ -20,13 +20,13 @@
 '.source.js':
   'console log':
     'prefix': 'log'
-    'body': 'console.log("$1", $1)'
+    'body': 'console.log(`$1`, $1)'
   'console info':
     'prefix': 'info'
-    'body': 'console.info("$1")'
+    'body': 'console.info(`$1`)'
   'console table':
     'prefix': 'table'
-    'body': 'console.table("$1", $1)'
+    'body': 'console.table(`$1`, $1)'
   'console trace':
     'prefix': 'trace'
-    'body': 'console.table("$1")'
+    'body': 'console.table(`$1`)'
