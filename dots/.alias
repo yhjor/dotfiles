@@ -14,6 +14,8 @@ alias go='$(history 15 | cut -c 8- | peco)'
 # dotfiles related
 alias reload='. ~/.bash_profile'
 alias dotfiles='cd ~/projects/dotfiles'
+alias web-components='cd ~/projects/web-components'
+alias web-testbed='cd ~/projects/web-testbed'
 alias dot='node ~/projects/dotfiles'
 
 # Quickly modify dotfiles
@@ -67,6 +69,7 @@ alias save-g='npm i -g'
 alias test='npm test'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias build='npm run build'
+alias publish='npm publish'
 
 # node related
 alias ni='node-inspector --preload=false &'
