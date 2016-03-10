@@ -1,5 +1,6 @@
 'apm':
   - linter-eslint
+  - linter-textlint
   - react
   - language-babel
   - atom-ternjs
@@ -44,6 +45,7 @@
   - evernote
   - cakebrew
   - gitkraken
+  - rdm
 
 'npm':
   - gulp
@@ -98,3 +100,4 @@
   - Unclutter
   - Grammarly
   - xDiagram
+  - Typeface
