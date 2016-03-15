@@ -29,7 +29,7 @@ alias .alias='atom ~/.alias'
 alias .ruby_version='atom ~/.ruby-version'
 alias .nvmrc='atom ~/.nvmrc'
 alias .osx='atom ~/projects/osx'
-alias .packages='atom ~/projects/packages'
+alias .packages='atom ~/.packages'
 
 # Get public ip
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
