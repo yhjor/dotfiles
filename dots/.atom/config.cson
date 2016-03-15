@@ -1,4 +1,5 @@
 "*":
+  "autocomplete-modules": {}
   "autocomplete-plus": {}
   "branch-status": {}
   core:

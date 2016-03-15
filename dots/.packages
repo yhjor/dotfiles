@@ -16,6 +16,8 @@
   - git-time-machine
   - line-diff-details
   - merge-conflicts
+  - autocomplete-modules
+  - npm-outdated
 
 'brew':
   - git
