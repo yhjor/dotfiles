@@ -6,7 +6,7 @@
     audioBeep: false
     disabledPackages: [
       "linter-jscs"
-      "language-babel"
+      "linter-scss-lint"
     ]
     packagesWithKeymapsDisabled: [
       "activate-power-mode"
@@ -39,6 +39,8 @@
   "mocha-test-runner": {}
   "node-debugger": {}
   "npm-install": {}
+  "npm-outdated":
+    notifyUpdate: false
   pigments: {}
   react: {}
   "todo-show": {}
