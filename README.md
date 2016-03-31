@@ -14,15 +14,13 @@
 
 ### General use cases
 
+- `dot build` when you updated source inside `src` directory
 - `dot init`: Generate init configs (change to zsh and custom settings such as .gituser and .nvmrc to ~)
 - `dot symlink`: Symbol link `dots/` files to `~`
-- `dot preinstall`: Setup env for development before installation
-- `dot preinstall (brew/dev/osx/zsh)`: Setup corresponding env for development before installation
-- `dot install`: Install all packages defined in `dots/.packages` (in YAML format)
-- `dot install (atom/brew/node)`: Install corresponding packages defined in `dots/.packages` (in YAML format)
-- `dot build` when you updated source inside `src` directory
+- `dot preinstall <brew/dev/osx/zsh>`: Setup env for development before installation
+- `dot install (atom/brew/node)`: Install packages defined in `dots/.packages` (in YAML format)
 
-## Highlight
+## Example
 
 ### OSX settings (dots/.osx)
 
@@ -57,9 +55,9 @@ Just toggle your preferred settings and run `dot preinstall osx`:
 
 ### Packages (dots/.packages)
 
-  'apm':
-    - linter-eslint
-    - react
+	'apm':
+	  - linter-eslint
+	  - react
 
 	'brew':
 		- git
