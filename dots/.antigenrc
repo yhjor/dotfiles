@@ -1,0 +1,16 @@
+# brew install antigen; brew list antigen
+. $(brew --prefix)/Cellar/antigen/1/share/antigen.zsh
+
+# antigen related
+antigen use oh-my-zsh
+
+antigen bundle z
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions src
+
+# look and feel of the terminal
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+
+antigen apply
