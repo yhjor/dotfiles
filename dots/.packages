@@ -1,6 +1,7 @@
 'apm':
   - linter-eslint
   - linter-textlint
+  - linter-scss-lint
   - react
   - language-babel
   - atom-ternjs
@@ -17,7 +18,7 @@
   - line-diff-details
   - merge-conflicts
   - autocomplete-modules
-  - npm-outdated
+  - sublime-style-column-selection
 
 'brew':
   - git
@@ -52,12 +53,11 @@
   - rdm
 
 'npm':
-  - gulp
   - babel-cli
   - webdriverio
   - updtr
   - junit-viewer
-  - html-to-react-components
+  - trymodule
   - iron-node
   - internal-ip
   - npm-name-cli
@@ -105,3 +105,4 @@
   - Grammarly
   - xDiagram
   - Typeface
+  - Gestimer
