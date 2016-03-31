@@ -1,8 +1,8 @@
 {
   "name": "dotfiles",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Personal dotfiles to kickstart development settings",
-  "main": "index.js",
+  "main": "lib/main.js",
   "scripts": {
     "postinstall": "npm run test && npm run build",
     "build": "./node_modules/.bin/rollup -c rollup.config.js",
