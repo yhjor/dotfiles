@@ -36,20 +36,18 @@
   - gnu-sed
   - zsh
   - antigen
+  - fzf
 
 'cask':
   - java
   - firefox
   - google-chrome
   - atom
-  - virtualbox
   - mongohub
   - macdown
   - skype
   - slack
   - evernote
-  - cakebrew
-  - gitkraken
   - rdm
 
 'npm':
