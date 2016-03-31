@@ -17,10 +17,10 @@
 - `dot init`: Generate init configs (change to zsh and custom settings such as .gituser and .nvmrc to ~)
 - `dot symlink`: Symbol link `dots/` files to `~`
 - `dot preinstall`: Setup env for development before installation
-- `dot preinstall (brew/dev/osx)`: Setup corresponding env for development before installation
+- `dot preinstall (brew/dev/osx/zsh)`: Setup corresponding env for development before installation
 - `dot install`: Install all packages defined in `dots/.packages` (in YAML format)
 - `dot install (atom/brew/node)`: Install corresponding packages defined in `dots/.packages` (in YAML format)
-- `npm run build` when you updated source inside `src` directory
+- `dot build` when you updated source inside `src` directory
 
 ## Highlight
 
@@ -54,26 +54,6 @@ Just toggle your preferred settings and run `dot preinstall osx`:
    	  sq = !sh -c \"git rebase -i HEAD~$1\"
  	  clear = checkout -- .
       create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
-
-### Alias (dots/.alias)
-
-	# Get public ip
-	alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-    # Mute sound
-	alias mute="osascript -e 'set volume output muted true'"
-
-	# Show/hide hidden files in Finder
-	alias show-hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-	alias hide-hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-	# application shorthand
-	alias t=trash
-	alias port='netstat -anp tcp | grep'
-
-	# General
-	alias ..='cd ..'
-	alias desktop='cd ~/Desktop && open .'
 
 ### Packages (dots/.packages)
 

@@ -6,8 +6,10 @@ import initializer from './tasks/initializer';
 import symlink from './tasks/symlink';
 import preInstaller from './tasks/pre-installer';
 import installer from './tasks/installer';
+import build from './tasks/build';
 
 export const OPTIONS = {
+  BUILD: 'build',
   INIT: 'init',
   SYMLINK: 'symlink',
   PREINSTALL: 'preinstall',
@@ -33,7 +35,6 @@ class Runner {
     try {
       fs.statSync(`${process.env.HOME}/.gituser`);
       fs.statSync(`${process.env.HOME}/.nvmrc`);
-      fs.statSync(`${process.env.HOME}/.ruby-version`);
     } catch (err) {
       if (err.code === 'ENOENT') return true;
     }
@@ -46,6 +47,7 @@ class Runner {
     if (option[OPTIONS.SYMLINK]) symlink.run();
     if (option[OPTIONS.PREINSTALL]) preInstaller.run(option.preinstall);
     if (option[OPTIONS.INSTALL]) installer.run(option.install);
+    if (option[OPTIONS.BUILD]) build.run(option.build);
   }
 }
 
