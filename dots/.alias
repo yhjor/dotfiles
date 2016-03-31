@@ -23,7 +23,7 @@ alias .gituser='atom ~/.gituser'
 alias .alias='atom ~/.alias'
 alias .nvmrc='atom ~/.nvmrc'
 alias .osx='atom ~/projects/osx'
-alias .packages='atom ~/.packages'
+alias .packages='atom ~/projects/dotfiles/dots/.packages'
 
 # Get public ip
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -48,7 +48,7 @@ alias mute="osascript -e 'set volume output muted true'"
 alias t=trash
 alias port='netstat -anp tcp | grep'
 alias da='direnv allow'
-alias gu='gulp'
+alias gu='./node_modules/.bin/gulp'
 alias x='gitx'
 alias g=git
 alias cask='brew cask'
