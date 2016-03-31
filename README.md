@@ -55,18 +55,6 @@ Just toggle your preferred settings and run `dot preinstall osx`:
  	  clear = checkout -- .
       create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
 
-### Terminal Config (dots/.bash_prompt)
-
-The above files gave the look and feel for development using Git:
-
-![alt tag](https://raw.github.com/yhjor1212/dotfiles/master/docs/git_clean.png)
-
-The line will look like this if there are any new changes:
-
-![alt tag](https://raw.github.com/yhjor1212/dotfiles/master/docs/git_dirty.png)
-
-You can change the terminal style in .bash_prompt easily.
-
 ### Alias (dots/.alias)
 
 	# Get public ip
