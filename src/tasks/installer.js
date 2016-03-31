@@ -9,7 +9,9 @@ const DOTS_NAME = 'dots';
 
 class Installer {
   constructor() {
-    this.packages = this.readPackages(path.resolve(__dirname, '..', DOTS_NAME, INSTALLATION_FILE));
+    this.packages = this.readPackages(
+      path.resolve(__dirname, '..', '..', DOTS_NAME, INSTALLATION_FILE)
+    );
   }
 
   readPackages(packagePath) {

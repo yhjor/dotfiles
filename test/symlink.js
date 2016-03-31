@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import test from 'tape';
-import symlink from '../src/tasks/symlink';
+import symlink from '../lib/tasks/symlink';
 
 test('should return correct js object', assert => {
   const error = symlink.link();

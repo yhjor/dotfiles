@@ -1,12 +1,12 @@
 import test from 'tape';
 import path from 'path';
-import installer from '../src/tasks/installer';
+import installer from '../lib/tasks/installer';
 
 const dotsFolder = path.resolve(__dirname, '..', 'dots');
 
 test('should return correct js object', assert => {
   const error = installer.readPackages();
-  assert.equal(error.message, 'Missing argument: path is not exist');
+  assert.equal(error.message, 'Missing argument: packagePath is not exist');
   assert.end();
 });
 

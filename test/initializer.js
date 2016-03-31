@@ -1,6 +1,6 @@
 import fs from 'fs';
 import test from 'tape';
-import initializer from '../src/tasks/initializer';
+import initializer from '../lib/tasks/initializer';
 
 const after = test;
 const TEST_FILE = 'file.test';
