@@ -6,17 +6,9 @@ alias back='cd -'
 alias desktop='cd ~/Desktop && open .'
 alias go='$(history 15 | cut -c 8- | peco)'
 
-# dotfiles related
-alias reload='. ~/.zshrc'
-alias dotfiles='cd ~/projects/dotfiles'
-alias web-components='cd ~/projects/web-components'
-alias web-testbed='cd ~/projects/web-testbed'
-alias dot='node ~/projects/dotfiles'
-
 # Quickly modify dotfiles
 alias .dotfiles='atom ~/projects/dotfiles'
-alias .bashrc='atom ~/.bashrc'
-alias .bash_profile='atom ~/.bash_profile'
+alias .zshrc='atom ~/.zshrc'
 alias .gitconfig='atom ~/.gitconfig'
 alias .gitignore='atom ~/.gitignore'
 alias .gituser='atom ~/.gituser'
@@ -25,47 +17,31 @@ alias .nvmrc='atom ~/.nvmrc'
 alias .osx='atom ~/projects/osx'
 alias .packages='atom ~/projects/dotfiles/dots/.packages'
 
-# Get public ip
+# System related
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias port='netstat -anp tcp | grep'
+alias timestamp=$(date +%s)
+alias lock="pmset sleepnow"
 
 # Show/hide hidden files in Finder
 alias show-hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide-hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Lock the screen (actually going to sleep mode)
-alias lock="pmset sleepnow"
-
-# Show information on current disk
-alias diskspace="df -P -kHl"
-
-# Show system timestamp
-alias timestamp=$(date +%s)
-
-# Mute sound
-alias mute="osascript -e 'set volume output muted true'"
-
 # application shorthand
-alias t=trash
-alias port='netstat -anp tcp | grep'
 alias da='direnv allow'
 alias gu='./node_modules/.bin/gulp'
 alias x='gitx'
 alias g=git
 alias cask='brew cask'
-alias n='npm'
-alias mo='mocha --compilers js:babel/register'
 
 # npm related
-alias use='nvm use'
+alias n='npm'
+alias nr='npm run'
 alias save='npm i --save'
 alias save-dev='npm i --save-dev'
 alias save-g='npm i -g'
-alias test='npm test'
-alias nf='npm cache clean && rm -rf node_modules && npm install'
-alias build='npm run build'
-alias publish='npm publish'
 
 # node related
 alias ni='node-inspector --preload=false &'
 alias nd='node --debug'
-alias clean-node='mv node_modules ~/Desktop/node_modules_$(date +%s)'
+alias node_modules='mv node_modules node_modules_$(date +%s)'
