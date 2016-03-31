@@ -5,8 +5,8 @@
   "main": "lib/main.js",
   "scripts": {
     "postinstall": "npm run test && npm run build",
-    "build": "./node_modules/.bin/rollup -c rollup.config.js",
-    "test": "./node_modules/.bin/tape -r babel-register ./test/*.js"
+    "build": "rollup -c rollup.config.js",
+    "test": "tape -r babel-register ./test/*.js"
   },
   "author": "George JOR",
   "license": "UNLICENSED",
