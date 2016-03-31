@@ -11,7 +11,6 @@ class PreInstaller {
 
     if (!which('brew')) {
       echo('Installing homebrew...');
-      exec(`ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'`);
     }
 
     exec('brew update');

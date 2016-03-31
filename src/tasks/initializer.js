@@ -7,7 +7,7 @@ import { exec } from 'shelljs';
 class Initializer {
   receivePrompt() {
     return new Promise((resolve, reject) => {
-      prompt.get(['name', 'email', 'node', 'ruby'], (err, result) => {
+      prompt.get(['name', 'email', 'node'], (err, result) => {
         if (err) return reject(`Fail to receive prompt: ${err.stack}`);
         resolve(result);
       });
@@ -43,7 +43,6 @@ class Initializer {
       this.receivePrompt()
         .then(selection => Promise.all([
           this.generateFile('.nvmrc', selection.node),
-          this.generateFile('.ruby-version', selection.ruby),
           this.generateFile('.gituser', this.getProfile(selection.email, selection.name)),
         ]))
         .catch(err => {
