@@ -2,6 +2,7 @@ import fs from 'fs';
 import logatim from 'logatim';
 import prompt from 'prompt';
 import { ArgumentNullError } from 'common-errors';
+import { exec } from 'shelljs';
 
 class Initializer {
   receivePrompt() {
@@ -51,7 +52,20 @@ class Initializer {
     });
   }
 
+  useZsh() {
+    exec(`sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"`);
+    exec('chsh -s /usr/local/bin/zsh');
+  }
+
+  createNpmrc() {
+    exec('npm login');
+  }
+
   run() {
+    this.useZsh();
+
+    this.createNpmrc();
+
     this.generate()
       .then(results => {
         logatim.setLevel('info');

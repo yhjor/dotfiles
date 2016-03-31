@@ -33,6 +33,8 @@
   - fpp
   - peco
   - gnu-sed
+  - zsh
+  - antigen
 
 'cask':
   - java

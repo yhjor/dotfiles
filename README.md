@@ -1,20 +1,20 @@
 # Automate your dots
 
 - Aggregate your preferences and configurations under version control
-- Abstract complicated bash scripts with modern ES2015 in Node.js
-- Design for maximizing simplicity and productivity
+- Abstract complicated shell scripts with modern ES2015 in Node.js
+- Design for simplicity and productivity for Node.js development
 
-###  How to use
+### What's inside
 
-1. Clone this project
-2. `npm install && npm run build`
-3. Execute Node.js in root directory: `node .` (alias `dot`)
-4. Enter personal info and preferences (~/.gituser, ~/.ruby-version, and ~/.npmrc will be generated)
-5. `. ~/.bash_profile`
+- atom's configs
+- set of shell alias
+- zsh and it's plugin using antigen
+- a packages definition file of atom/brew/cask/npm/etc with auto installation
+- osx settings
 
 ### General use cases
 
-- `dot init`: Generate init configs (.gituser, .nvmrc and .ruby-version in ~ folder)
+- `dot init`: Generate init configs (change to zsh and custom settings such as .gituser and .nvmrc to ~)
 - `dot symlink`: Symbol link `dots/` files to `~`
 - `dot preinstall`: Setup env for development before installation
 - `dot preinstall (brew/dev/osx)`: Setup corresponding env for development before installation
@@ -77,20 +77,20 @@ Just toggle your preferred settings and run `dot preinstall osx`:
 
 ### Packages (dots/.packages)
 
-    'apm':
-	    - linter-eslint
-	    - react
-	
+  'apm':
+    - linter-eslint
+    - react
+
 	'brew':
 		- git
 		- mongodb
-	
+
 	'cask':
 		- java
 		- google-chrome
 		- atom
 		- slack
-	
+
 	'npm':
 		- babel-cli
 		- webdriverio

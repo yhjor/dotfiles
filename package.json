@@ -21,7 +21,7 @@
     "alias",
     "config",
     "git",
-    "bash",
+    "zsh",
     "dotfiles"
   ],
   "devDependencies": {

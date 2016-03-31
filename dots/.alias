@@ -1,18 +1,13 @@
 # General
 alias ls='ls -a'
 alias list='ls | fpp'
-alias home='cd ~'
 alias ~='cd ~'
 alias back='cd -'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias desktop='cd ~/Desktop && open .'
 alias go='$(history 15 | cut -c 8- | peco)'
 
 # dotfiles related
-alias reload='. ~/.bash_profile'
+alias reload='. ~/.zshrc'
 alias dotfiles='cd ~/projects/dotfiles'
 alias web-components='cd ~/projects/web-components'
 alias web-testbed='cd ~/projects/web-testbed'

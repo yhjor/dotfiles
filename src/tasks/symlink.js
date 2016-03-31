@@ -23,7 +23,7 @@ class Symlink {
   }
 
   source() {
-    exec(`. ~/.bash_profile`);
+    exec(`. ~/.zshrc`);
   }
 
   run() {
