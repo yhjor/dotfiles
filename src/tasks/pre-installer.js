@@ -6,6 +6,15 @@ class PreInstaller {
     exec('. ~/.osx');
   }
 
+  zsh() {
+    // change from bash to zsh
+    exec(`sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"`);
+    exec('chsh -s /usr/local/bin/zsh');
+
+    // install fzf
+    exec('/usr/local/opt/fzf/install');
+  }
+
   brew() {
     echo('Start brew setup script...');
 
@@ -30,14 +39,13 @@ class PreInstaller {
 
     exec(`mkdir -p ~/.nvm`);
     exec(`nvm install`);
-    exec(`rbenv install`);
-    exec(`gem install bundler`);
   }
 
   run(option) {
     const fullInstall = option === true;
 
     if (fullInstall || option === 'brew') this.brew();
+    if (fullInstall || option === 'zsh') this.zsh();
     if (fullInstall || option === 'dev') this.dev();
     if (fullInstall || option === 'osx') this.osx();
   }

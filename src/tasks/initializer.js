@@ -51,18 +51,11 @@ class Initializer {
     });
   }
 
-  useZsh() {
-    exec(`sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"`);
-    exec('chsh -s /usr/local/bin/zsh');
-  }
-
   createNpmrc() {
     exec('npm login');
   }
 
   run() {
-    this.useZsh();
-
     this.createNpmrc();
 
     this.generate()
