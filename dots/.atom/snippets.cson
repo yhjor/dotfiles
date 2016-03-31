@@ -24,9 +24,6 @@
   'console info':
     'prefix': 'info'
     'body': 'console.info(`$1`)'
-  'console table':
-    'prefix': 'table'
-    'body': 'console.table(`$1`, $1)'
-  'console trace':
-    'prefix': 'trace'
-    'body': 'console.table(`$1`)'
+  'eslint disable':
+    'prefix': 'eslint'
+    'body': '/* eslint-disable $1 */$2/* eslint-enable */'
