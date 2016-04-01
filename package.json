@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "Personal dotfiles to kickstart shell and development settings",
   "main": "lib/main.js",
+  "bin": {
+    "dot": "./bin/dot"
+  },
+  "engines": {
+    "node": ">5.0.0",
+    "npm": "~3.0.0"
+  },
   "scripts": {
     "postinstall": "npm run test && npm run build",
     "clean": "rm -rf ./lib",
