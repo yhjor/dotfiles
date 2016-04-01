@@ -1,39 +1,25 @@
-# general
-alias ls='ls -a'
-alias list='ls | fpp'
-alias ~='cd ~'
-alias back='cd -'
-alias desktop='cd ~/Desktop && open .'
-alias go='$(history 15 | cut -c 8- | peco)'
-
 # dotfiles related
 alias reload='. ~/.zshrc'
-alias .dotfiles='atom ~/projects/dotfiles'
 alias .zshrc='atom ~/.zshrc'
 alias .gitconfig='atom ~/.gitconfig'
-alias .gitignore='atom ~/.gitignore'
 alias .gituser='atom ~/.gituser'
 alias .alias='atom ~/.alias'
 alias .nvmrc='atom ~/.nvmrc'
-alias .osx='atom ~/projects/osx'
-alias .packages='atom ~/projects/dotfiles/dots/.packages'
+alias .osx='atom ~/.osx'
+alias .packages='atom ~/.packages'
 
 # system related
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias port='netstat -anp tcp | grep'
-alias timestamp=$(date +%s)
 alias lock="pmset sleepnow"
-
-# show/hide hidden files in Finder
 alias show-hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide-hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # application shorthand related
-alias da='direnv allow'
 alias gu='./node_modules/.bin/gulp'
+alias lint='./node_modules/.bin/eslint'
+alias da='direnv allow'
 alias x='gitx'
 alias g=git
-alias cask='brew cask'
 
 # npm related
 alias n='npm'
