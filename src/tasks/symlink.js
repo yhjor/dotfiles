@@ -8,7 +8,9 @@ const DOTS_NAME = 'dots';
 
 class Symlink {
   link(targetFolder) {
-    if (!targetFolder) return new ArgumentNullError('targetFolder is not exist');
+    if (!targetFolder) {
+      throw new ArgumentNullError('targetFolder');
+    }
 
     const files = fs.readdirSync(targetFolder);
 
@@ -22,13 +24,8 @@ class Symlink {
     });
   }
 
-  source() {
-    exec(`. ~/.zshrc`);
-  }
-
   run() {
-    this.link(path.resolve(__dirname, '..', DOTS_NAME));
-    this.source();
+    this.link(path.resolve(__dirname, '..', '..', DOTS_NAME));
   }
 }
 

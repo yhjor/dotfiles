@@ -4,9 +4,12 @@ import test from 'tape';
 import symlink from '../lib/tasks/symlink';
 
 test('should return correct js object', assert => {
-  const error = symlink.link();
-  assert.equal(error.message, 'Missing argument: targetFolder is not exist');
-  assert.end();
+  try {
+    symlink.link();
+  } catch (error) {
+    assert.equal(error.message, 'Missing argument: targetFolder');
+    assert.end();
+  }
 });
 
 test('should generate valid symbol link', assert => {
