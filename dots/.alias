@@ -1,4 +1,4 @@
-# General
+# general
 alias ls='ls -a'
 alias list='ls | fpp'
 alias ~='cd ~'
@@ -6,7 +6,8 @@ alias back='cd -'
 alias desktop='cd ~/Desktop && open .'
 alias go='$(history 15 | cut -c 8- | peco)'
 
-# Quickly modify dotfiles
+# dotfiles related
+alias reload='. ~/.zshrc'
 alias .dotfiles='atom ~/projects/dotfiles'
 alias .zshrc='atom ~/.zshrc'
 alias .gitconfig='atom ~/.gitconfig'
@@ -17,17 +18,17 @@ alias .nvmrc='atom ~/.nvmrc'
 alias .osx='atom ~/projects/osx'
 alias .packages='atom ~/projects/dotfiles/dots/.packages'
 
-# System related
+# system related
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias port='netstat -anp tcp | grep'
 alias timestamp=$(date +%s)
 alias lock="pmset sleepnow"
 
-# Show/hide hidden files in Finder
+# show/hide hidden files in Finder
 alias show-hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide-hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# application shorthand
+# application shorthand related
 alias da='direnv allow'
 alias gu='./node_modules/.bin/gulp'
 alias x='gitx'
