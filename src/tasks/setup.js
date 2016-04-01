@@ -1,6 +1,6 @@
-import { exec, echo, which } from 'shelljs';
+import { exec } from 'shelljs';
 
-class PreInstaller {
+class Setup {
   osx() {
     exec('softwareupdate -iva');
     exec('. ~/.osx');
@@ -8,23 +8,13 @@ class PreInstaller {
 
   zsh() {
     // change from bash to zsh
+    /* eslint-disable quotes */
     exec(`sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"`);
+    /* eslint-enable */
     exec('chsh -s /usr/local/bin/zsh');
 
     // install fzf
     exec('/usr/local/opt/fzf/install');
-  }
-
-  brew() {
-    echo('Start brew setup script...');
-
-    if (!which('brew')) {
-      echo('Installing homebrew...');
-    }
-
-    exec('brew update');
-    exec('brew upgrade --all');
-    exec('brew tap caskroom/cask');
   }
 
   dev() {
@@ -37,18 +27,18 @@ class PreInstaller {
     // load mongodb now:
     exec('launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist');
 
-    exec(`mkdir -p ~/.nvm`);
-    exec(`nvm install`);
+    // install nvm
+    exec('mkdir -p ~/.nvm');
+    exec('nvm install');
   }
 
   run(option) {
     const fullInstall = option === true;
 
-    if (fullInstall || option === 'brew') this.brew();
     if (fullInstall || option === 'zsh') this.zsh();
     if (fullInstall || option === 'dev') this.dev();
     if (fullInstall || option === 'osx') this.osx();
   }
 }
 
-export default new PreInstaller();
+export default new Setup();

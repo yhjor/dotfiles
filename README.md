@@ -17,14 +17,15 @@
 - `dot build` when you updated source inside `src` directory
 - `dot init`: Generate init configs (change to zsh and custom settings such as .gituser and .nvmrc to ~)
 - `dot symlink`: Symbol link `dots/` files to `~`
-- `dot preinstall <brew/dev/osx/zsh>`: Setup env for development before installation
-- `dot install (atom/brew/node)`: Install packages defined in `dots/.packages` (in YAML format)
+- `dot setup [osx/zsh/dev]`: Setup env for development before installation
+- `dot install [brew/apm/npm]`: Install packages defined in `dots/.packages` (in YAML format)
+- `reload` or `. ~/.zshrc`: reload the dot changes in case it doesn't take effect
 
 ## Example
 
 ### OSX settings (dots/.osx)
 
-Just toggle your preferred settings and run `dot preinstall osx`:
+Just toggle your preferred settings and run `dot setup osx`:
 
 	# Disable the sound effects on boot
 	sudo nvram SystemAudioVolume=" "

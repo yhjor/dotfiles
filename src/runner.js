@@ -4,15 +4,13 @@ import logatim from 'logatim';
 
 import initializer from './tasks/initializer';
 import symlink from './tasks/symlink';
-import preInstaller from './tasks/pre-installer';
+import setup from './tasks/setup';
 import installer from './tasks/installer';
-import build from './tasks/build';
 
 export const OPTIONS = {
-  BUILD: 'build',
   INIT: 'init',
   SYMLINK: 'symlink',
-  PREINSTALL: 'preinstall',
+  SETUP: 'setup',
   INSTALL: 'install',
 };
 
@@ -45,9 +43,8 @@ class Runner {
   dispatchAction(option) {
     if (this.isFirstTimeRun() || option[OPTIONS.INIT]) initializer.run();
     if (option[OPTIONS.SYMLINK]) symlink.run();
-    if (option[OPTIONS.PREINSTALL]) preInstaller.run(option.preinstall);
+    if (option[OPTIONS.SETUP]) setup.run(option.setup);
     if (option[OPTIONS.INSTALL]) installer.run(option.install);
-    if (option[OPTIONS.BUILD]) build.run(option.build);
   }
 }
 
