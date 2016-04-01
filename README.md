@@ -14,7 +14,7 @@
 
 ### General use cases
 
-- `dot build` when you updated source inside `src` directory
+- `npm i && npm run build && npm link`: make the dot command running
 - `dot init`: Generate init configs (change to zsh and custom settings such as .gituser and .nvmrc to ~)
 - `dot symlink`: Symbol link `dots/` files to `~`
 - `dot setup [osx/zsh/dev]`: Setup env for development before installation
