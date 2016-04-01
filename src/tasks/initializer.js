@@ -2,33 +2,39 @@ import fs from 'fs';
 import logatim from 'logatim';
 import prompt from 'prompt';
 import { ArgumentNullError } from 'common-errors';
-import { exec } from 'shelljs';
 
 class Initializer {
   receivePrompt() {
     return new Promise((resolve, reject) => {
       prompt.get(['name', 'email', 'node'], (err, result) => {
-        if (err) return reject(`Fail to receive prompt: ${err.stack}`);
+        if (err) {
+          reject(`Fail to receive prompt: ${err.stack}`);
+          return;
+        }
+
         resolve(result);
       });
     });
   }
 
   generateFile(fileName, content) {
-    if (!fileName) return Promise.reject(new ArgumentNullError('fileName is not exist'));
-    if (!content) return Promise.reject(new ArgumentNullError('file content is not exist'));
+    if (!fileName) return Promise.reject(new ArgumentNullError('fileName'));
+    if (!content) return Promise.reject(new ArgumentNullError('file content'));
 
     return new Promise((resolve, reject) => {
       fs.writeFile(`${process.env.HOME}/${fileName}`, content, err => {
-        if (err) return reject(`Fail to write ${fileName} ${err.stack}`);
-        logatim.green.info(`Generate ${fileName} success`);
-        resolve();
+        if (err) {
+          reject(`Fail to write ${fileName} ${err.stack}`);
+          return;
+        }
+
+        resolve(`Generate ${fileName} success`);
       });
     });
   }
 
   getProfile(email, name) {
-    let profileContent = `[user]`;
+    let profileContent = '[user]';
 
     if (email) profileContent += `\n  email = ${email}`;
     if (name) profileContent += `\n  name = ${name}`;
@@ -37,27 +43,16 @@ class Initializer {
   }
 
   generate() {
-    return new Promise((resolve, reject) => {
-      prompt.start();
+    prompt.start();
 
-      this.receivePrompt()
-        .then(selection => Promise.all([
-          this.generateFile('.nvmrc', selection.node),
-          this.generateFile('.gituser', this.getProfile(selection.email, selection.name)),
-        ]))
-        .catch(err => {
-          reject(err);
-        });
-    });
-  }
-
-  createNpmrc() {
-    exec('npm login');
+    return this.receivePrompt()
+      .then(selection => Promise.all([
+        this.generateFile('.nvmrc', selection.node),
+        this.generateFile('.gituser', this.getProfile(selection.email, selection.name)),
+      ]));
   }
 
   run() {
-    this.createNpmrc();
-
     this.generate()
       .then(results => {
         logatim.setLevel('info');

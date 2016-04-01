@@ -9,7 +9,7 @@ test('should not generate file when file name is not exist', assert => {
   initializer
     .generateFile()
     .catch(error => {
-      assert.equal(error.message, 'Missing argument: fileName is not exist');
+      assert.equal(error.message, 'Missing argument: fileName');
       assert.end();
     });
 });
@@ -18,7 +18,7 @@ test('should not generate file when file content is not exist', assert => {
   initializer
     .generateFile(TEST_FILE)
     .catch(error => {
-      assert.equal(error.message, 'Missing argument: file content is not exist');
+      assert.equal(error.message, 'Missing argument: file content');
       assert.end();
     });
 });
