@@ -18,6 +18,7 @@
   - merge-conflicts
   - autocomplete-modules
   - sublime-style-column-selection
+  - delete-lines
 
 'brew':
   - git
