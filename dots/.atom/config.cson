@@ -12,7 +12,7 @@
       "activate-power-mode"
     ]
   editor:
-    fontSize: 24
+    fontSize: 17
     invisibles: {}
   "exception-reporting":
     userId: "3c6478a4-bf15-fa36-7bc5-517c0d550ef1"
