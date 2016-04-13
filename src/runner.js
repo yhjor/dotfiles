@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { exit, which } from 'shelljs';
+import { exit, which, exec } from 'shelljs';
 import logatim from 'logatim';
 
 import initializer from './tasks/initializer';
@@ -12,19 +12,14 @@ export const OPTIONS = {
   SYMLINK: 'symlink',
   SETUP: 'setup',
   INSTALL: 'install',
+  EXIT: 'exit',
 };
 
 class Runner {
-  checkGit() {
-    if (!which('git')) {
-      logatim.red.warn('This script requires git');
-      exit(1);
-    }
-  }
-
-  checkNpm() {
-    if (!which('npm')) {
-      logatim.red.warn('This script requires npm');
+  checkBrew() {
+    if (!which('brew')) {
+      logatim.yellow.warn('Installing brew:');
+      exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"');
       exit(1);
     }
   }
@@ -41,10 +36,25 @@ class Runner {
   }
 
   dispatchAction(option) {
-    if (this.isFirstTimeRun() || option[OPTIONS.INIT]) initializer.run();
-    if (option[OPTIONS.SYMLINK]) symlink.run();
-    if (option[OPTIONS.SETUP]) setup.run(option.setup);
-    if (option[OPTIONS.INSTALL]) installer.run(option.install);
+    if (option === OPTIONS.EXIT) {
+      return;
+    }
+
+    if (this.isFirstTimeRun() || option === OPTIONS.INIT) {
+      initializer.run();
+    }
+
+    if (option === OPTIONS.SYMLINK) {
+      symlink.run();
+    }
+
+    if (option === OPTIONS.SETUP) {
+      setup.prompt();
+    }
+
+    if (option === OPTIONS.INSTALL) {
+      installer.prompt();
+    }
   }
 }
 

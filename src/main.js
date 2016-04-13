@@ -1,13 +1,23 @@
-import commander from 'commander';
+import inquirer from 'inquirer';
 import runner, { OPTIONS } from './runner';
 
-commander
-  .option(OPTIONS.INIT, 'Prompt and generate user configs into ~ folder')
-  .option(OPTIONS.SYMLINK, 'Symlink all dotfiles under dots/ directory to ~ directory')
-  .option(`${OPTIONS.SETUP} [value]`, 'Setup necessary dependencies')
-  .option(`${OPTIONS.INSTALL} [value]`, 'Install package defined in dots/.package')
-  .parse(process.argv);
+runner.checkBrew();
 
-runner.checkGit();
-runner.checkNpm();
-runner.dispatchAction(commander);
+inquirer
+  .prompt([
+    {
+      type: 'list',
+      name: 'option',
+      message: 'Choose an operation',
+      choices: [
+        OPTIONS.INIT,
+        OPTIONS.SYMLINK,
+        OPTIONS.SETUP,
+        OPTIONS.INSTALL,
+        OPTIONS.EXIT,
+      ],
+    },
+  ])
+  .then(({ option }) => {
+    runner.dispatchAction(option);
+  });

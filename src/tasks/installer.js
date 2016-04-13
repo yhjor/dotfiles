@@ -1,3 +1,4 @@
+import inquirer from 'inquirer';
 import { exec } from 'shelljs';
 import fs from 'fs';
 import path from 'path';
@@ -6,6 +7,14 @@ import { ArgumentNullError } from 'common-errors';
 
 const INSTALLATION_FILE = '.packages';
 const DOTS_NAME = 'dots';
+
+const OPTIONS = {
+  ALL: 'all',
+  BREW: 'brew',
+  ATOM: 'atom',
+  NODE: 'node',
+  EXIT: 'exit',
+};
 
 class Installer {
   constructor() {
@@ -34,12 +43,45 @@ class Installer {
     (this.packages.npm || []).forEach(npmPackage => exec(`npm install -g ${npmPackage}`));
   }
 
-  run(option) {
-    const fullInstall = option === true;
+  prompt() {
+    inquirer
+      .prompt([
+        {
+          type: 'list',
+          name: 'option',
+          message: 'Choose an install option',
+          choices: [
+            OPTIONS.ALL,
+            OPTIONS.BREW,
+            OPTIONS.ATOM,
+            OPTIONS.NODE,
+            OPTIONS.EXIT,
+          ],
+        },
+      ])
+      .then(({ option }) => {
+        this.run(option);
+      });
+  }
 
-    if (fullInstall || option === 'brew') this.brew();
-    if (fullInstall || option === 'atom') this.atom();
-    if (fullInstall || option === 'node') this.node();
+  run(option) {
+    if (option === OPTIONS.EXIT) {
+      return;
+    }
+
+    const fullInstall = option === OPTIONS.ALL;
+
+    if (fullInstall || option === OPTIONS.BREW) {
+      this.brew();
+    }
+
+    if (fullInstall || option === OPTIONS.ATOM) {
+      this.atom();
+    }
+
+    if (fullInstall || option === OPTIONS.NODE) {
+      this.node();
+    }
   }
 }
 

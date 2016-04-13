@@ -1,20 +1,29 @@
 import fs from 'fs';
 import logatim from 'logatim';
-import prompt from 'prompt';
+import inquirer from 'inquirer';
 import { ArgumentNullError } from 'common-errors';
 
 class Initializer {
   receivePrompt() {
-    return new Promise((resolve, reject) => {
-      prompt.get(['name', 'email', 'node'], (err, result) => {
-        if (err) {
-          reject(`Fail to receive prompt: ${err.stack}`);
-          return;
-        }
-
-        resolve(result);
-      });
-    });
+    return inquirer
+      .prompt([
+        {
+          type: 'input',
+          name: 'name',
+          message: 'Enter your Git name',
+        },
+        {
+          type: 'input',
+          name: 'email',
+          message: 'Enter your Git email',
+        },
+        {
+          type: 'input',
+          name: 'node',
+          message: 'Enter a Node version',
+          default: () => '5',
+        },
+      ]);
   }
 
   generateFile(fileName, content) {
@@ -43,8 +52,6 @@ class Initializer {
   }
 
   generate() {
-    prompt.start();
-
     return this.receivePrompt()
       .then(selection => Promise.all([
         this.generateFile('.nvmrc', selection.node),
