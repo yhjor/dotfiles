@@ -49,7 +49,7 @@ Just toggle your preferred settings and run `dot setup osx`:
    	  path = ~/.gituser
 
 	[alias]
-	  co = !sh -c \"git checkout $(git branch | peco --select-1)\"
+	  co = !sh -c \"git checkout $(git branch | fzf)\"
    	  sq = !sh -c \"git rebase -i HEAD~$1\"
  	  clear = checkout -- .
       create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
