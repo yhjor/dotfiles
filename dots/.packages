@@ -1,7 +1,6 @@
 'apm':
   - linter-eslint
   - linter-textlint
-  - linter-scss-lint
   - react
   - language-babel
   - atom-ternjs
@@ -22,21 +21,14 @@
 
 'brew':
   - git
-  - mongodb
   - redis
   - httpie
   - mackup
-  - nvm
-  - heroku-toolbelt
   - ccat
   - rbenv
   - tree
-  - fpp
-  - peco
   - gnu-sed
-  - zsh
-  - antigen
-  - fzf
+  - diff-so-fancy
 
 'cask':
   - java
@@ -61,45 +53,25 @@
   - npm-name-cli
   - nativefier
   - pageres-cli
-  - diff-so-fancy
 
 'osx':
   - 1Password
-  - CodeDrop
   - Buffer
-  - Brightness menu bar
-  - Boxy
   - Color Picker
-  - Copied
   - Cloud Outliner 2 Pro
-  - Degrees
-  - DrCleaner
   - Due
-  - Dropmark
   - HazeOver
-  - Irvue
   - iTranslate
   - Media Player
   - Money Pro
-  - MenuTab for Facebook
-  - Microsoft OneNote
-  - Momentum
   - Magnet
-  - NoteAway
   - Noizio
   - Numbers
-  - One
   - Paste
   - Paw
-  - Pomodoro Time
-  - Pull - Menu Timer
-  - Raindrop.io
   - Reeder
   - Simplify
-  - Slack
   - SmartConverter
-  - Twitter
-  - Unclutter
   - Grammarly
   - xDiagram
   - Typeface
