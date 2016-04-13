@@ -3,6 +3,7 @@
   "autocomplete-plus": {}
   "branch-status": {}
   core:
+    allowPendingPaneItems: false
     audioBeep: false
     disabledPackages: [
       "linter-jscs"
