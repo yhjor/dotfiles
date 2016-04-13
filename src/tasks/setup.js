@@ -1,3 +1,4 @@
+import log from 'logatim';
 import inquirer from 'inquirer';
 import { exec } from 'shelljs';
 
@@ -32,8 +33,9 @@ class Setup {
     /* eslint-enable */
     exec('chsh -s /usr/local/bin/zsh');
 
-    // powerful fuzzy finder
-    exec('/usr/local/opt/fzf/install');
+    // custom prompt regarding installing fzf
+    log.yellow.warn(`Please exec the following command:
+/usr/local/opt/fzf/install`);
   }
 
   dev() {
