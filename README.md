@@ -6,26 +6,21 @@
 
 ### What's inside
 
-- atom's configs
+- zsh, antigen and it's plugin
 - set of shell alias
-- zsh and it's plugin using antigen
+- configurable OSX settings
 - a packages definition file of atom/brew/cask/npm/etc with auto installation
-- osx settings
+- atom's configs
 
 ### General use cases
 
 - `npm i && npm run build && npm link`: make the dot command running
-- `dot init`: Generate init configs (change to zsh and custom settings such as .gituser and .nvmrc to ~)
-- `dot symlink`: Symbol link `dots/` files to `~`
-- `dot setup [osx/zsh/dev]`: Setup env for development before installation
-- `dot install [brew/apm/npm]`: Install packages defined in `dots/.packages` (in YAML format)
-- `reload` or `. ~/.zshrc`: reload the dot changes in case it doesn't take effect
+- `dot`: an interactive commander will be shown
+- `. ~/.zshrc`: reload the dot changes in case it doesn't take effect
 
 ## Example
 
 ### OSX settings (dots/.osx)
-
-Just toggle your preferred settings and run `dot setup osx`:
 
 	# Disable the sound effects on boot
 	sudo nvram SystemAudioVolume=" "
@@ -42,17 +37,17 @@ Just toggle your preferred settings and run `dot setup osx`:
 	[apply]
 	  whitespace = fix
 
-    [push]
+  [push]
 	  default = current
 
 	[include]
-   	  path = ~/.gituser
+   	path = ~/.gituser
 
 	[alias]
 	  co = !sh -c \"git checkout $(git branch | fzf)\"
-   	  sq = !sh -c \"git rebase -i HEAD~$1\"
- 	  clear = checkout -- .
-      create-fix = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+   	diffs = "!git diff --color $@ | diff-so-fancy"
+ 	  bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
+		clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
 
 ### Packages (dots/.packages)
 
@@ -73,5 +68,9 @@ Just toggle your preferred settings and run `dot setup osx`:
 	'npm':
 		- babel-cli
 		- webdriverio
+
+### More
+
+	Take a look inside `./dot`
 
 Enjoy!
