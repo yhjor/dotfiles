@@ -12,15 +12,37 @@
 - a packages definition file of atom/brew/cask/npm/etc with auto installation
 - atom's configs
 
-### General use cases
+### Before Start
 
-- `npm i && npm run build && npm link`: make the dot command running
-- `dot`: an interactive commander will be shown
-- `. ~/.zshrc`: reload the dot changes in case it doesn't take effect
+1. `npm install`
+2. `npm run build`
+3. `npm link`
 
-## Example
+## The dot commands
 
-### OSX settings (dots/.osx)
+Just execute `dot` in your shell, an interactive command will be shown.
+
+![Alt text](docs/main.png?raw=true "dot command")
+
+And you might need to initialize it once since different machines might have different configs:
+
+![Alt text](docs/init.png?raw=true "init")
+
+Symlink all dotfiles makes editing easy:
+
+![Alt text](docs/symlink.png?raw=true "symlink")
+
+Switching from bash to zsh is necessary, Sorry :)
+
+![Alt text](docs/setup.png?raw=true "setup")
+
+Installing packages defined in dots/.packages:
+
+![Alt text](docs/install.png?raw=true "install")
+
+## The dot files
+
+### OSX Settings (dots/.osx)
 
 	# Disable the sound effects on boot
 	sudo nvram SystemAudioVolume=" "
@@ -37,11 +59,11 @@
 	[apply]
 	  whitespace = fix
 
-  [push]
-	  default = current
+    [push]
+      default = current
 
 	[include]
-   	path = ~/.gituser
+   	  path = ~/.gituser
 
 	[alias]
 	  co = !sh -c \"git checkout $(git branch | fzf)\"
@@ -51,26 +73,28 @@
 
 ### Packages (dots/.packages)
 
+Written in YAML format.
+
 	'apm':
-	  - linter-eslint
-	  - react
+      - linter-eslint
+      - react
 
 	'brew':
-		- git
-		- mongodb
+	  - git
+	  - mongodb
 
 	'cask':
-		- java
-		- google-chrome
-		- atom
-		- slack
+	  - java
+	  - google-chrome
+	  - atom
+	  - slack
 
 	'npm':
-		- babel-cli
-		- webdriverio
+	  - babel-cli
+	  - webdriverio
 
 ### More
 
-	Take a look inside `./dot`
+Take a look inside `./dot`
 
 Enjoy!
