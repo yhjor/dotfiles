@@ -6,7 +6,6 @@
     audioBeep: false
     disabledPackages: [
       "linter-jscs"
-      "linter-scss-lint"
     ]
     packagesWithKeymapsDisabled: [
       "activate-power-mode"
