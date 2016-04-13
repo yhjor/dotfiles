@@ -2,11 +2,11 @@ import inquirer from 'inquirer';
 import { exec } from 'shelljs';
 
 const OPTIONS = {
-  ALL: 'all',
-  OSX: 'osx',
-  ZSH: 'zsh',
-  DEV: 'dev',
-  EXIT: 'exit',
+  ALL: 'All',
+  OSX: 'Initialize OSX settings in ~/.osx',
+  ZSH: 'Change your shell from brew to zsh',
+  DEV: 'Development related',
+  EXIT: 'Exit',
 };
 
 class Setup {

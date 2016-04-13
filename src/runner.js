@@ -8,11 +8,11 @@ import setup from './tasks/setup';
 import installer from './tasks/installer';
 
 export const OPTIONS = {
-  INIT: 'init',
-  SYMLINK: 'symlink',
-  SETUP: 'setup',
-  INSTALL: 'install',
-  EXIT: 'exit',
+  INIT: 'Initialize:\t~/.nvmrc and ./gituser',
+  SYMLINK: 'Symlink:\tdotfiles from ./dots to ~/',
+  SETUP: 'Setup:\tOSX configs, Zsh and plugins, Development tools',
+  INSTALL: 'Install:\tBrew, Atom and Node packages that defined in ~/.packages',
+  EXIT: 'Exit',
 };
 
 class Runner {

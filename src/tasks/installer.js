@@ -9,11 +9,11 @@ const INSTALLATION_FILE = '.packages';
 const DOTS_NAME = 'dots';
 
 const OPTIONS = {
-  ALL: 'all',
-  BREW: 'brew',
-  ATOM: 'atom',
-  NODE: 'node',
-  EXIT: 'exit',
+  ALL: 'All',
+  BREW: 'Install software with Brew',
+  ATOM: 'Install Atom packages',
+  NODE: 'Install Node packages',
+  EXIT: 'Exit',
 };
 
 class Installer {
