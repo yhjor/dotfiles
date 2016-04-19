@@ -7,6 +7,7 @@
     audioBeep: false
     disabledPackages: [
       "linter-jscs"
+      "language-gfm"
     ]
     packagesWithKeymapsDisabled: [
       "activate-power-mode"
@@ -34,7 +35,9 @@
   "linter-eslint": {}
   "linter-js-yaml": {}
   "linter-textlint": {}
+  "markdown-preview": {}
   "markdown-preview-plus": {}
+  "markdown-writer": {}
   "merge-conflicts": {}
   "mocha-test-runner": {}
   "node-debugger": {}
