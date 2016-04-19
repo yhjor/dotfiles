@@ -1,3 +1,6 @@
+# personal
+alias note='atom ~/Library/Mobile\ Documents/com~apple~CloudDocs/Docs/development.md'
+
 # dotfiles related
 alias reload='. ~/.zshrc'
 alias .zshrc='atom ~/.zshrc'
