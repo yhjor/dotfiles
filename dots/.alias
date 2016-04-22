@@ -1,7 +1,4 @@
-# personal
-alias note='atom ~/Library/Mobile\ Documents/com~apple~CloudDocs/Docs/development.md'
-
-# dotfiles related
+# quick navigation and modification
 alias reload='. ~/.zshrc'
 alias .zshrc='atom ~/.zshrc'
 alias .gitconfig='atom ~/.gitconfig'
@@ -10,6 +7,10 @@ alias .alias='atom ~/.alias'
 alias .nvmrc='atom ~/.nvmrc'
 alias .osx='atom ~/.osx'
 alias .packages='atom ~/.packages'
+alias snippets='atom ~/.atom/snippets.cson'
+alias dev='atom ~/projects/dev-resources/README.md'
+alias draft='atom ~/Library/Mobile\ Documents/com~apple~CloudDocs/Docs/draft.md'
+alias note='atom ~/Library/Mobile\ Documents/com~apple~CloudDocs/Docs/note.md'
 
 # system related
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
