@@ -3,6 +3,7 @@
   - linter-textlint
   - react
   - language-babel
+  - language-gfm
   - atom-ternjs
   - file-icons
   - pigments
