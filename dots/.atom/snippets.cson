@@ -17,6 +17,17 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
+# for markdown
+'.source.gfm':
+  'Js Code Block':
+    'prefix': '```js'
+    'body': """
+```javascript
+$1
+```
+"""
+
+
 '.source.js':
   'console log':
     'prefix': 'log'
@@ -27,3 +38,85 @@
   'eslint disable':
     'prefix': 'eslint'
     'body': '/* eslint-disable $1 */$2/* eslint-enable */'
+
+  'Story':
+    'prefix': 'story'
+    'body': """
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
+
+import '../css/$1.css';
+import $2 from '../components/$1/$2';
+
+storiesOf('$2', module)
+  .add('Basic', () => (
+    <$2 />
+  ));
+"""
+
+
+  'React Component Style':
+    'prefix': 'reactC'
+    'body': """
+import React, { Component, PropTypes } from 'react';
+
+class $1 extends Component {
+  render() {
+    return (
+      <div></div>
+    );
+  }
+}
+
+$1.propTypes = {
+  propsName: PropTypes.string.isRequired,
+};
+
+export default $1;
+"""
+
+
+  'Stateless Component':
+    'prefix': 'react'
+    'body': """
+import React, { PropTypes } from 'react';
+
+export default function $1({ exampleProps }) {
+  return (
+    <div>
+      Hello {exampleProps}!
+    </div>
+  );
+}
+
+$1.defaultProps = {
+  exampleProps: 'World',
+};
+
+$1.propTypes = {
+  exampleProps: PropTypes.string.isRequired,
+};
+"""
+
+
+  'define message':
+    'prefix': 'dem'
+    'body': """
+{
+  id: '$2',
+  defaultMessage: '{{key}} $1',
+},
+"""
+
+
+  'formated message':
+    'prefix': 'form'
+    'body': """
+<FormattedMessage
+  id="$2"
+  defaultMessage="$1"
+/>
+"""
+  'import formatted message':
+    'prefix': 'imf'
+    'body': "import { FormattedMessage } from 'react-intl';"
