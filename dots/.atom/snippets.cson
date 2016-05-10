@@ -39,6 +39,27 @@ $1
     'prefix': 'eslint'
     'body': '/* eslint-disable $1 */$2/* eslint-enable */'
 
+  'Unit test':
+    'prefix': 'test'
+    'body': """
+import { expect } from 'chai';
+
+describe('$1', () => {
+  it('should $2', () => {
+
+  });
+});
+"""
+
+
+  'SetTimeout':
+    'prefix': 'sett'
+    'body': """
+setTimeout(() => {
+  $1
+}, 2000);
+"""
+
   'Story':
     'prefix': 'story'
     'body': """
