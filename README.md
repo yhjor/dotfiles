@@ -1,5 +1,9 @@
 # Automate your dots
 
+<a href="https://travis-ci.org/yhjor1212/dotfiles">
+	<img alt="Travis Status" src="https://img.shields.io/travis/yhjor1212/dotfiles.svg">
+</a>
+
 - Aggregate your preferences and configurations under version control
 - Abstract complicated shell scripts with modern ES2015 in Node.js
 - Design for simplicity and productivity for Node.js development
