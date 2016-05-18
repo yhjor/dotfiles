@@ -29,6 +29,7 @@
   - highlight-selected
   - toggle-quotes
   - terminal-plus
+  - change-case
 
 'brew':
   - git
