@@ -1,7 +1,4 @@
 "*":
-  "autocomplete-modules": {}
-  "autocomplete-plus": {}
-  "branch-status": {}
   core:
     allowPendingPaneItems: false
     audioBeep: false
@@ -22,9 +19,8 @@
     showOnlyLastNames: false
   "git-diff-details":
     keepViewToggled: false
-  "git-history": {}
-  "git-log": {}
-  "git-projects": {}
+  "highlight-selected":
+    lightTheme: true
   jumpy: {}
   "language-babel":
     autoIndentJSX: true
@@ -32,21 +28,17 @@
     numberOfLines: 4
   linter:
     errorPanelHeight: 24
-  "linter-eslint": {}
-  "linter-js-yaml": {}
-  "linter-textlint": {}
-  "markdown-preview": {}
-  "markdown-preview-plus": {}
-  "markdown-writer": {}
-  "merge-conflicts": {}
-  "mocha-test-runner": {}
-  "node-debugger": {}
-  "npm-install": {}
-  "npm-outdated":
-    notifyUpdate: false
-  pigments: {}
+  "project-plus":
+    autoDiscover: false
+    notifications: false
+    projectHome: "~/"
   react: {}
-  "todo-show": {}
-  "tree-view": {}
+  "terminal-plus":
+    core: {}
+    style:
+      animationSpeed: 10
+      defaultPanelHeight: "40%"
+  "toggle-quotes":
+    quoteCharacters: "\"'`"
   welcome:
     showOnStartup: false

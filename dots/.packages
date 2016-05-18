@@ -24,6 +24,11 @@
   - markdown-writer
   - language-markdown
   - linter-markdown
+  - define-jump
+  - project-plus
+  - highlight-selected
+  - toggle-quotes
+  - terminal-plus
 
 'brew':
   - git
@@ -59,3 +64,4 @@
   - npm-name-cli
   - nativefier
   - pageres-cli
+  - ttab
