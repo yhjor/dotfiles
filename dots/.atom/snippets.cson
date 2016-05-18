@@ -17,6 +17,18 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
+# for coffee/cson
+'.source.coffee':
+  'Coffee - snippets.cson':
+    'prefix': 'snippets'
+    'body': """
+\t'$1':
+\t'prefix': '$1'
+\t'body': \"\"\"
+$2
+\"\"\"
+"""
+
 # for markdown
 '.source.gfm':
   'Js Code Block':
@@ -27,20 +39,56 @@ $1
 ```
 """
 
-
+# Javascript
 '.source.js':
   'console log':
     'prefix': 'log'
-    'body': 'console.log(`$1`, $1)'
+    'body': 'console.log(`$1`, $1);'
+
   'console info':
     'prefix': 'info'
-    'body': 'console.info(`$1`)'
-  'eslint disable':
+    'body': 'console.info(`$1`);'
+
+  # js related
+  'General - SetTimeout':
+    'prefix': 'js_sTo'
+    'body': """
+setTimeout(() => {
+  $1
+}, 2000);
+"""
+
+  'General - new Promise':
+    'prefix': 'js_promise'
+    'body': """
+return new Promise((resolve, reject) => {
+  if (error) {
+    reject(new Error(error.message));
+    return;
+  }
+
+  resolve();
+});
+"""
+
+  'General - for of':
+    'prefix': 'js_for_of'
+    'body': """
+for(const key of Object.keys($1)) {
+  if (true) {
+    $2
+  }
+}
+"""
+
+  # eslint related
+  'Eslint - inline disable':
     'prefix': 'eslint'
     'body': '/* eslint-disable $1 */$2/* eslint-enable */'
 
-  'Unit test':
-    'prefix': 'test'
+  # mocha related
+  'Mocha':
+    'prefix': 'mocha'
     'body': """
 import { expect } from 'chai';
 
@@ -51,16 +99,39 @@ describe('$1', () => {
 });
 """
 
-
-  'SetTimeout':
-    'prefix': 'sett'
+  'Mocha - describe':
+    'prefix': 'mc_describe'
     'body': """
-setTimeout(() => {
-  $1
-}, 2000);
+describe('$1', () => {
+  $2
+});
 """
 
-  'Story':
+  'Mocha - it':
+    'prefix': 'mc_it'
+    'body': """
+it('should $1', () => {
+  $2
+});
+"""
+
+  'Mocha - beforeEach':
+    'prefix': 'mc_bE'
+    'body': """
+beforeEach(() => {
+  $1
+});
+"""
+
+  'Mocha - afterEach':
+    'prefix': 'mc_aE'
+    'body': """
+afterEach(() => {
+  $1
+});
+"""
+
+  'React Story':
     'prefix': 'story'
     'body': """
 import React from 'react';
@@ -75,9 +146,8 @@ storiesOf('$2', module)
   ));
 """
 
-
   'React Component Style':
-    'prefix': 'reactC'
+    'prefix': 'react_class'
     'body': """
 import React, { Component, PropTypes } from 'react';
 
@@ -96,8 +166,7 @@ $1.propTypes = {
 export default $1;
 """
 
-
-  'Stateless Component':
+  'React - Stateless Component':
     'prefix': 'react'
     'body': """
 import React, { PropTypes } from 'react';
@@ -119,25 +188,66 @@ $1.propTypes = {
 };
 """
 
-
-  'define message':
-    'prefix': 'dem'
+  'React - PropTypes':
+    'prefix': 'react_propTypes'
     'body': """
-{
-  id: '$2',
-  defaultMessage: '{{key}} $1',
+$1.propTypes = {
+  $2: PropTypes.$3.isRequired,
+};
+"""
+
+  'Intl - defineMessages':
+    'prefix': 'intl_defineMessages'
+    'body': """
+const MESSAGES = defineMessages({
+  $1: {
+    id: '$1',
+    defaultMessage: '$1',
+  },
+});
+"""
+
+  'Intl - defineMessages block':
+    'prefix': 'intl_defineMessages_block'
+    'body': """
+$1: {
+  id: '$1',
+  defaultMessage: '$1',
 },
 """
 
-
-  'formated message':
-    'prefix': 'form'
+  'Intl - element':
+    'prefix': 'intl_element'
     'body': """
 <FormattedMessage
-  id="$2"
+  id="$1"
   defaultMessage="$1"
 />
 """
-  'import formatted message':
-    'prefix': 'imf'
-    'body': "import { FormattedMessage } from 'react-intl';"
+
+  'Intl - messages':
+    'prefix': 'intl_i18nMessages'
+    'body': """
+import i18nMessages from '$1main/constants/i18nMessages';
+"""
+
+  'Intl - props':
+    'prefix': 'intl_props'
+    'body': """
+const { intl: { formatMessage } } = this.props;
+"""
+
+  'Intl - import':
+    'prefix': 'intl_import'
+    'body': """
+import {
+  FormattedMessage,
+  defineMessages,
+  injectIntl,
+  intlShape,
+} from 'react-intl';
+"""
+
+  'Intl - injectIntl':
+    'prefix': 'intl_inject'
+    'body': "export default injectIntl($1);"
