@@ -33,6 +33,12 @@
     notifications: false
     projectHome: "~/"
   react: {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   "terminal-plus":
     core: {}
     style:
