@@ -9,7 +9,7 @@
 
 # Generate Snippets Block
 '.source.coffee':
-  'Coffee - snippets.cson':
+  'snippets.cson':
     'prefix': 'snippets'
     'body': """
 \t'$1':
