@@ -16,3 +16,6 @@
 
 # install fzf
 [ -f ~/.fzfrc ] && . ~/.fzfrc
+
+# mount autocomplete scripts
+[ -f ~/.autocomplete ] && . ~/.autocomplete
