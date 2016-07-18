@@ -1,68 +1,80 @@
 'apm':
-  - linter-eslint
-  - linter-textlint
-  - react
+  - atom-ternjs
+  - autocomplete-modules
+  - autocomplete-paths
+  - blame
+  - change-case
+  - copy-path
+  - code-peek
+  - define-jump
+  - delete-lines
+  - double-tag
+  - expose
+  - file-icons
+  - git-time-machine
+  - highlight-selected
+  - hyperclick
+  - js-hyperclick
+  - jumpy
   - language-babel
   - language-gfm
-  - atom-ternjs
-  - file-icons
-  - pigments
-  - pretty-json
-  - autocomplete-paths
-  - copy-path
-  - project-switcher
-  - line-jumper
-  - jumpy
-  - git-blame
-  - git-time-machine
+  - language-markdown
+  - last-cursor-position
   - line-diff-details
-  - merge-conflicts
-  - autocomplete-modules
-  - sublime-style-column-selection
-  - delete-lines
+  - line-jumper
+  - linter-eslint
+  - linter-markdown
+  - linter-textlint
   - markdown-scroll-sync
   - markdown-writer
-  - language-markdown
-  - linter-markdown
-  - define-jump
+  - merge-conflicts
+  - nice-index
+  - pigments
+  - pretty-json
   - project-plus
-  - highlight-selected
-  - toggle-quotes
+  - project-switcher
+  - react
+  - script
+  - simple-drag-drop-text
+  - sort-lines
+  - sublime-style-column-selection
   - terminal-plus
-  - change-case
+  - toggle-quotes
 
 'brew':
+  - ccat
+  - diff-so-fancy
   - git
-  - redis
+  - gnu-sed
   - httpie
   - mackup
-  - ccat
   - rbenv
+  - redis
   - tree
-  - gnu-sed
-  - diff-so-fancy
 
 'cask':
-  - java
+  - atom
+  - evernote
   - firefox
   - google-chrome
-  - atom
-  - mongohub
+  - java
+  - lacona
   - macdown
+  - mongohub
+  - rdm
   - skype
   - slack
-  - evernote
-  - rdm
 
 'npm':
   - babel-cli
-  - webdriverio
-  - updtr
-  - junit-viewer
-  - trymodule
-  - iron-node
   - internal-ip
-  - npm-name-cli
+  - iron-node
+  - junit-viewer
   - nativefier
+  - npm-name-cli
   - pageres-cli
+  - trymodule
   - ttab
+  - npm-check
+  - webdriverio
+  - speed-test

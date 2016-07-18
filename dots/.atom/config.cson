@@ -21,6 +21,12 @@
     keepViewToggled: false
   "highlight-selected":
     lightTheme: true
+  "js-hyperclick":
+    extensions: [
+      ".js"
+      ".json"
+      ".jsx"
+    ]
   jumpy: {}
   "language-babel":
     autoIndentJSX: true
