@@ -11,6 +11,9 @@
 # alias related
 [[ -r ~/.alias ]] && . ~/.alias
 
+# functions related
+[[ -r ~/.functions ]] && . ~/.functions
+
 # setup antigen
 [ -f ~/.antigenrc ] && . ~/.antigenrc
 
@@ -19,3 +22,6 @@
 
 # mount autocomplete scripts
 [ -f ~/.autocomplete ] && . ~/.autocomplete
+
+# specify terminal title
+ZSH_THEME_TERM_TAB_TITLE_IDLE='zsh'

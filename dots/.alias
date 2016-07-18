@@ -1,10 +1,5 @@
-# quick snippets and notes access
-alias snippets='atom ~/.atom/snippets.cson'
-alias dev='atom ~/Library/Mobile\ Documents/com~apple~CloudDocs/Docs/dev.md'
-alias note='atom ~/Library/Mobile\ Documents/com~apple~CloudDocs/Docs/note.md'
-
 # quick dotfiles access
-alias reload='. ~/.zshrc'
+alias .reload='. ~/.zshrc'
 alias .zshrc='atom ~/.zshrc'
 alias .gitconfig='atom ~/.gitconfig'
 alias .gituser='atom ~/.gituser'
@@ -12,29 +7,23 @@ alias .alias='atom ~/.alias'
 alias .nvmrc='atom ~/.nvmrc'
 alias .osx='atom ~/.osx'
 alias .packages='atom ~/.packages'
+alias .snippets='atom ~/.atom/snippets.cson'
 
-# system related
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias lock="pmset sleepnow"
-alias show-hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide-hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# application shorthand related
-alias gu='./node_modules/.bin/gulp'
+# cli shortcut related
 alias lint='./node_modules/.bin/eslint'
 alias da='direnv allow'
 alias x='gitx'
 alias g=git
 alias mc='./node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register --require babel-polyfill --recursive'
-
-# npm related
+alias bn='babel-node'
 alias n='npm'
+alias nra='npm-run-all'
+
+# npm and node shortcut related
 alias nr='npm run'
 alias save='npm i --save'
 alias save-dev='npm i --save-dev'
 alias save-g='npm i -g'
-
-# node related
 alias ni='node-inspector --preload=false &'
 alias nd='node --debug'
-alias node_modules='mv node_modules node_modules_$(date +%s)'
+alias nm='mv node_modules node_modules_$(date +%s)'

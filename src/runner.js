@@ -1,11 +1,13 @@
 import fs from 'fs';
 import { exit, which, exec } from 'shelljs';
+import inquirer from 'inquirer';
 import logatim from 'logatim';
 
 import initializer from './tasks/initializer';
 import symlink from './tasks/symlink';
 import setup from './tasks/setup';
 import installer from './tasks/installer';
+import cli from './tasks/cli';
 
 export const OPTIONS = {
   INIT: 'Initialize:\t~/.nvmrc and ./gituser',
@@ -33,6 +35,36 @@ class Runner {
     }
 
     return false;
+  }
+
+  start() {
+    if (!cli.inputMatch()) {
+      this.interactive();
+      return;
+    }
+
+    cli.run();
+  }
+
+  interactive() {
+    inquirer
+      .prompt([
+        {
+          type: 'list',
+          name: 'option',
+          message: 'Choose an operation',
+          choices: [
+            OPTIONS.INIT,
+            OPTIONS.SYMLINK,
+            OPTIONS.SETUP,
+            OPTIONS.INSTALL,
+            OPTIONS.EXIT,
+          ],
+        },
+      ])
+      .then(({ option }) => {
+        this.dispatchAction(option);
+      });
   }
 
   dispatchAction(option) {

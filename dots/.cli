@@ -1,0 +1,10 @@
+module.exports = {
+  ip: 'dig +short myip.opendns.com @resolver1.opendns.com',
+  lock: '/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend',
+  sleep: 'pmset sleepnow',
+  screensaver: 'open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app',
+  'app-store': "find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'",
+  'show-hidden': 'defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder',
+  'hide-hidden': 'defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder',
+  'eject-mount': `osascript -e 'tell application "Finder" to eject (every disk whose executable is true)'`,
+};
