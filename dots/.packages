@@ -67,6 +67,7 @@
 
 'npm':
   - babel-cli
+  - np
   - internal-ip
   - iron-node
   - junit-viewer
@@ -78,3 +79,4 @@
   - npm-check
   - webdriverio
   - speed-test
+  - git-standup
