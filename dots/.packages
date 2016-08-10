@@ -1,4 +1,5 @@
 'apm':
+  - advanced-open-file
   - atom-ternjs
   - autocomplete-modules
   - autocomplete-paths
@@ -31,8 +32,7 @@
   - nice-index
   - pigments
   - pretty-json
-  - project-plus
-  - project-switcher
+  - project-manager
   - react
   - script
   - simple-drag-drop-text
@@ -67,12 +67,14 @@
 
 'npm':
   - babel-cli
+  - devtool
   - np
   - internal-ip
   - iron-node
   - junit-viewer
   - nativefier
   - npm-name-cli
+  - node-nightly
   - pageres-cli
   - trymodule
   - ttab
