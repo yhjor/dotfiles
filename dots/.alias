@@ -26,4 +26,5 @@ alias save-dev='npm i --save-dev'
 alias save-g='npm i -g'
 alias ni='node-inspector --preload=false &'
 alias nd='node --debug'
-alias nm='mv node_modules node_modules_$(date +%s)'
+alias try=trymodule
+alias nn='node-nightly --inspect --debug-brk'
