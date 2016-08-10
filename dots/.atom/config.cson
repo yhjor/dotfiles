@@ -34,6 +34,9 @@
     numberOfLines: 4
   linter:
     errorPanelHeight: 24
+  "project-manager":
+    showPath: false
+    sortBy: "last modified"
   "project-plus":
     autoDiscover: false
     notifications: false
