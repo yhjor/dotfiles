@@ -1,7 +1,6 @@
 import { exec } from 'shelljs';
 import path from 'path';
 import fs from 'fs';
-import logatim from 'logatim';
 import { ArgumentNullError } from 'common-errors';
 import intersection from 'lodash/intersection';
 

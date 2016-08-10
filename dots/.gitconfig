@@ -85,5 +85,8 @@
 [include]
   path = ~/.gituser
 
+[commit]
+  template = ~/.gitmessage
+
 [merge]
 	tool = opendiff
