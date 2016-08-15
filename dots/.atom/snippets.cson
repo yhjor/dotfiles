@@ -18,3 +18,15 @@
 $2
 \"\"\"
 """
+
+'.source.js':
+  'promise.catch':
+    'prefix': 'catch'
+    'body': """
+catch(error => console.error('error', error))
+"""
+  'promise.then':
+    'prefix': 'then'
+    'body': """
+then(result => console.info('then', result))
+"""
