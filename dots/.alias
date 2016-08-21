@@ -20,6 +20,7 @@ alias mc='./node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/re
 alias bn='babel-node'
 alias n='npm'
 alias nra='npm-run-all'
+alias bs='browser-sync'
 
 # npm and node shortcut related
 alias nr='npm run'
