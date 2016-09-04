@@ -14,6 +14,7 @@ alias lint='./node_modules/.bin/eslint'
 alias da='direnv allow'
 alias x='gitx'
 alias g=git
+alias gh=github
 alias mc='./node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register --require babel-polyfill --recursive'
 alias bn='babel-node'
 alias n='npm'
