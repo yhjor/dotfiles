@@ -22,3 +22,6 @@
 
 # mount autocomplete scripts
 [ -f ~/.autocomplete ] && . ~/.autocomplete
+
+# import custom settings
+[ -f ~/.custom ] && . ~/.custom

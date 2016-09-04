@@ -9,4 +9,5 @@ dots/.atom/*
 !dots/.atom/snippets.cson
 !dots/.atom/styles.less
 
-!dots/.custom
+# Ignore .custom settings 
+dots/.custom
