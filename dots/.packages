@@ -32,8 +32,8 @@
   - nice-index
   - pigments
   - pretty-json
+  - php-integrator-base
   - project-manager
-  - react
   - script
   - simple-drag-drop-text
   - sort-lines
@@ -44,26 +44,17 @@
 'brew':
   - ccat
   - diff-so-fancy
-  - git
   - gnu-sed
   - httpie
   - mackup
-  - rbenv
   - redis
   - tree
 
 'cask':
   - atom
-  - evernote
   - firefox
-  - google-chrome
   - java
-  - lacona
-  - macdown
-  - mongohub
   - rdm
-  - skype
-  - slack
 
 'npm':
   - babel-cli
