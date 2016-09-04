@@ -1,5 +1,5 @@
 # brew install antigen; brew list antigen
-. $(brew --prefix)/Cellar/antigen/1/share/antigen.zsh
+. $(brew --prefix)/share/antigen/antigen.zsh
 
 # antigen related
 antigen use oh-my-zsh

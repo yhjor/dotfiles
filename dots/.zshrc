@@ -18,10 +18,7 @@
 [ -f ~/.antigenrc ] && . ~/.antigenrc
 
 # install fzf
-[ -f ~/.fzfrc ] && . ~/.fzfrc
+[ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
 
 # mount autocomplete scripts
 [ -f ~/.autocomplete ] && . ~/.autocomplete
-
-# specify terminal title
-ZSH_THEME_TERM_TAB_TITLE_IDLE='zsh'

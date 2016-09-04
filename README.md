@@ -18,9 +18,8 @@
 
 ### Before Start
 
-1. `npm install`
-2. `npm run build`
-3. `npm link`
+1. `. setup.sh`
+2. `npm link`
 
 ## The dot commands
 
@@ -63,11 +62,11 @@ Installing packages defined in dots/.packages:
 	[apply]
 	  whitespace = fix
 
-    [push]
-      default = current
+  [push]
+    default = current
 
 	[include]
-   	  path = ~/.gituser
+   	path = ~/.gituser
 
 	[alias]
 	  co = !sh -c \"git checkout $(git branch | fzf)\"
@@ -80,8 +79,8 @@ Installing packages defined in dots/.packages:
 Written in YAML format.
 
 	'apm':
-      - linter-eslint
-      - react
+    - linter-eslint
+    - react
 
 	'brew':
 	  - git
@@ -99,6 +98,6 @@ Written in YAML format.
 
 ### More
 
-Take a look inside `./dot`
+Take a look inside `./dots`
 
 Enjoy!

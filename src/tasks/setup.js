@@ -5,7 +5,6 @@ import { exec } from 'shelljs';
 const OPTIONS = {
   ALL: 'All',
   OSX: 'Initialize OSX settings in ~/.osx',
-  ZSH: 'Change your shell from brew to zsh',
   DEV: 'Development related',
   EXIT: 'Exit',
 };
@@ -20,29 +19,10 @@ class Setup {
     exec('. ~/.osx');
   }
 
-  zsh() {
-    this.inject([
-      'zsh',
-      'antigen',
-      'fzf',
-    ]);
-
-    // change from bash to zsh
-    /* eslint-disable quotes */
-    exec(`sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"`);
-    /* eslint-enable */
-    exec('chsh -s /usr/local/bin/zsh');
-
-    // custom prompt regarding installing fzf
-    log.yellow.warn(`Please exec the following command:
-/usr/local/opt/fzf/install`);
-  }
-
   dev() {
     this.inject([
       'heroku-toolbelt',
       'mongodb',
-      'nvm',
     ]);
 
     exec('xcode-select --install');
@@ -68,7 +48,6 @@ class Setup {
           choices: [
             OPTIONS.ALL,
             OPTIONS.OSX,
-            OPTIONS.ZSH,
             OPTIONS.DEV,
             OPTIONS.EXIT,
           ],
@@ -85,10 +64,6 @@ class Setup {
     }
 
     const fullInstall = option === OPTIONS.ALL;
-
-    if (fullInstall || option === OPTIONS.ZSH) {
-      this.zsh();
-    }
 
     if (fullInstall || option === OPTIONS.DEV) {
       this.dev();

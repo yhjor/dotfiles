@@ -12,7 +12,7 @@ import cli from './tasks/cli';
 export const OPTIONS = {
   INIT: 'Initialize:\t~/.nvmrc and ./gituser',
   SYMLINK: 'Symlink:\tdotfiles from ./dots to ~/',
-  SETUP: 'Setup:\tOSX configs, Zsh and plugins, Development tools',
+  SETUP: 'Setup:\tOSX configs, plugins and Development tools',
   INSTALL: 'Install:\tBrew, Atom and Node packages that defined in ~/.packages',
   EXIT: 'Exit',
 };
