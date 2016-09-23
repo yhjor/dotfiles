@@ -1,5 +1,6 @@
 # Built files
 lib
+node_modules
 
 # Keep only necessary configs for Atom
 dots/.atom/*
@@ -9,5 +10,5 @@ dots/.atom/*
 !dots/.atom/snippets.cson
 !dots/.atom/styles.less
 
-# Ignore .custom settings 
+# Ignore .custom settings
 dots/.custom
