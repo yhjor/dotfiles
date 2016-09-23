@@ -70,6 +70,7 @@
   - trymodule
   - ttab
   - npm-check
+  - npm-check-updates
   - webdriverio
   - speed-test
   - git-standup
