@@ -1,6 +1,6 @@
 # quick dotfiles access
 alias .reload='. ~/.zshrc'
-alias .custom='. ~/.custom'
+alias .custom='atom ~/.custom'
 alias .zshrc='atom ~/.zshrc'
 alias .gitconfig='atom ~/.gitconfig'
 alias .gituser='atom ~/.gituser'
