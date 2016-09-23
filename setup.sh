@@ -1,3 +1,8 @@
+#
+# Check if Homebrew is installed
+#
+which -s brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Setup Nvm and Npm
 if [ -z "$NVM_DIR" -a -d "$HOME/.nvm" ] ; then
   brew install nvm
