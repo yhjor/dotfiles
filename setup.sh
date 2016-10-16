@@ -1,6 +1,7 @@
 # List of brew and npm packages to be installed
-brew=(ccat tree)
-npm=(yarn nativefier trymodule internal-ip diff-so-fancy speed-test devtool)
+BREW_PACKAGES=(ccat tree yarn)
+NODE_PACKAGES=(nativefier trymodule internal-ip diff-so-fancy speed-test devtool)
+NODE_VERSION=6
 
 #
 # Check if Homebrew is installed
@@ -22,7 +23,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Install brew packages
-for package in "${brew[@]}"
+for package in "${BREW_PACKAGES[@]}"
 do
   which "$package" || brew install "$package"
 done
@@ -38,13 +39,17 @@ if [ -z "$NVM_DIR" -a -d "$HOME/.nvm" ] ; then
   mkdir ~/.nvm
   export NVM_DIR="$HOME/.nvm"
   . "$(brew --prefix nvm)/nvm.sh"
+  nvm install $NODE_VERSION
 fi
 
-nvm install 6
+nvm use --delete-prefix $NODE_VERSION
 npm update -g
 
 # Install npm packages
-for package in "${npm[@]}"
+for package in "${NODE_PACKAGES[@]}"
 do
-  which "$package" || npm install -g "$package"
+  which "$package" || yarn global add "$package"
 done
+
+# Enable the `dot` command by linking up current dotfiles to be executable
+yarn link
