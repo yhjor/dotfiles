@@ -23,6 +23,7 @@
 	aa = "!git add . && git commit --amend"
 	bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
 	bof = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+	cm = 'git commit -am'
 
 	# Human alias
 	last = "!git log -p -1 --color | diff-so-fancy"
