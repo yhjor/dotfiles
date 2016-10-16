@@ -3,6 +3,7 @@
   - atom-ternjs
   - autocomplete-modules
   - autocomplete-paths
+  - atom-beautify
   - blame
   - change-case
   - copy-path
@@ -10,8 +11,11 @@
   - define-jump
   - delete-lines
   - double-tag
+  - docblockr
   - expose
+  - regex-railroad-diagram
   - file-icons
+  - local-history
   - git-time-machine
   - highlight-selected
   - hyperclick
@@ -61,7 +65,6 @@
   - devtool
   - np
   - internal-ip
-  - iron-node
   - junit-viewer
   - nativefier
   - npm-name-cli
