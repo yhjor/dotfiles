@@ -55,13 +55,9 @@
   - tree
 
 'cask':
-  - atom
-  - firefox
   - java
-  - rdm
 
 'npm':
-  - babel-cli
   - devtool
   - np
   - internal-ip
@@ -73,7 +69,4 @@
   - trymodule
   - ttab
   - npm-check
-  - npm-check-updates
-  - webdriverio
   - speed-test
-  - git-standup

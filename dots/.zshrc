@@ -11,9 +11,6 @@
 # alias related
 [[ -r ~/.alias ]] && . ~/.alias
 
-# functions related
-[[ -r ~/.functions ]] && . ~/.functions
-
 # setup antigen
 [ -f ~/.antigenrc ] && . ~/.antigenrc
 

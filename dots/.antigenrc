@@ -6,14 +6,10 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle brew
-antigen bundle brew-cask
 antigen bundle z
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions src
-
-# look and feel of the terminal
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
 
 antigen apply
