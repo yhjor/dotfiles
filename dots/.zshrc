@@ -14,9 +14,6 @@
 # setup antigen
 [ -f ~/.antigenrc ] && . ~/.antigenrc
 
-# install fzf
-[ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
-
 # mount autocomplete scripts
 [ -f ~/.autocomplete ] && . ~/.autocomplete
 

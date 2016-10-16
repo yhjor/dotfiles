@@ -91,6 +91,7 @@
 
 [merge]
 	tool = opendiff
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
