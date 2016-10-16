@@ -20,5 +20,6 @@
 # mount autocomplete scripts
 [ -f ~/.autocomplete ] && . ~/.autocomplete
 
-# import custom settings
-[ -f ~/.custom ] && . ~/.custom
+# for the look and feel
+autoload -U promptinit; promptinit
+prompt pure
