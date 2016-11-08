@@ -1,59 +1,59 @@
 [core]
-	ignorecase = false
+  ignorecase = false
   excludesfile = ~/.gitignore
-	editor = vim
+  editor = vim
 
 [branch]
-	autosetuprebase = always
-	autosetupmerge = always
+  autosetuprebase = always
+  autosetupmerge = always
 
 [apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
 
 [alias]
-	# Shortcut alias
+  # alias for geek
   s = status
   co = !sh -c \"git checkout $(git branch | fzf)\"
   mt = mergetool
-	i = rebase -i
+  i = rebase -i
   b = branch
   ls = branch -vv
-	cp = cherry-pick
-	aa = "!git add . && git commit --amend"
-	bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
-	bof = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
-	cm = 'git commit -am'
+  cp = cherry-pick
+  aa = "!git add . && git commit --amend"
+  bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
+  bof = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+  cm = 'git commit -am'
 
-	# Human alias
-	last = "!git log -p -1 --color | diff-so-fancy"
-	diffs = "!git diff --color | diff-so-fancy"
-	stash = stash -k
-	pop = stash pop
-	stashes = stash list
-	discard = checkout --
-	amend = commit --amend
-	uncommit = reset --mixed HEAD~
-	unstage = reset -q HEAD --
-	logs = log --oneline --decorate
-	branches = branch -a
+  # alias for human
+  last = "!git log -p -1 --color | diff-so-fancy"
+  diffs = "!git diff --color | diff-so-fancy"
+  stash = stash -k
+  pop = stash pop
+  stashes = stash list
+  discard = checkout --
+  amend = commit --amend
+  uncommit = reset --mixed HEAD~
+  unstage = reset -q HEAD --
+  logs = log --oneline --decorate
+  branches = branch -a
 
-	delete = !sh -c \"git branch -D $(git branch | fzf)\"
-	update = pull --rebase
-	abort = rebase --abort
-	continue = rebase --continue
-	rename = branch -m
-	merged = branch --merged
-	not-merged = branch --no-merged
-	current = rev-parse --symbolic-full-name --abbrev-ref HEAD
-	origin = !sh -c \"git rev-parse --abbrev-ref --symbolic-full-name @{u} | sed 's/origin\\///g'\"
-	rebase-from = !sh -c \"git rebase $(git branch | fzf)\"
-	set-origin = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
-	clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
-
-	publish = !sh -c \"git push origin @:refs/for/$(git origin)\"
-	publish-draft = !sh -c \"git push origin @:refs/drafts/$(git origin)\"
-	publish-to = !sh -c \"git push origin @:refs/for/$(git branch | fzf)\"
+  # alias for super human
+  delete = !sh -c \"git branch -D $(git branch | fzf)\"
+  update = pull --rebase
+  abort = rebase --abort
+  continue = rebase --continue
+  rename = branch -m
+  merged = branch --merged
+  not-merged = branch --no-merged
+  current = rev-parse --symbolic-full-name --abbrev-ref HEAD
+  origin = !sh -c \"git rev-parse --abbrev-ref --symbolic-full-name @{u} | sed 's/origin\\///g'\"
+  rebase-from = !sh -c \"git rebase $(git branch | fzf)\"
+  set-origin = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
+  clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
+  publish = !sh -c \"git push origin @:refs/for/$(git origin)\"
+  publish-draft = !sh -c \"git push origin @:refs/drafts/$(git origin)\"
+  publish-to = !sh -c \"git push origin @:refs/for/$(git branch | fzf)\"
 
 [color]
   ui = auto
@@ -81,7 +81,7 @@
   newHighlight = "green bold 22"
 
 [push]
-	default = current
+  default = current
 
 [include]
   path = ~/.gituser
@@ -90,9 +90,9 @@
   template = ~/.gitmessage
 
 [merge]
-	tool = opendiff
+  tool = opendiff
 
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+  required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
