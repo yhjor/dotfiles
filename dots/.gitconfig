@@ -1,7 +1,6 @@
 [core]
 	ignorecase = false
-  excludesfile = ~/.gitignore
-	editor = vim
+	excludesfile = ~/.gitignore
 
 [branch]
 	autosetuprebase = always
@@ -18,11 +17,20 @@
   mt = mergetool
 	i = rebase -i
   b = branch
-  ls = branch -vv
+	ls = "! git for-each-ref --format='%(refname:short) %(push:track)' refs/heads"
+  branches = branch -vv
 	cp = cherry-pick
 	aa = "!git add . && git commit --amend"
 	bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
 	bof = !sh -c \"git fetch origin $(git current):fix/$1 && git checkout fix/$1 && git branch -u origin/$(git current) fix/$1\"
+
+	sync = "!f() { \
+  	git checkout -b $1 origin/$1 && git merge --no-ff --no-edit origin/master && git push && git checkout master; \
+  }; f"
+
+	search = "!f() { \
+		git log --oneline | grep $1; \
+  }; f"
 
 	# Human alias
 	last = "!git log -p -1 --color | diff-so-fancy"
@@ -34,10 +42,9 @@
 	amend = commit --amend
 	uncommit = reset --mixed HEAD~
 	unstage = reset -q HEAD --
-	logs = log --oneline --decorate
-	branches = branch -a
+	logs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
-	delete = !sh -c \"git branch -D $(git branch | fzf)\"
+	delete = !sh -c \"git branch -D $(git branch | fzf) && git branch\"
 	update = pull --rebase
 	abort = rebase --abort
 	continue = rebase --continue
@@ -86,7 +93,7 @@
   path = ~/.gituser
 
 [commit]
-  template = ~/.gitmessage
+	template = ~/.gitmessage
 
 [merge]
 	tool = opendiff
