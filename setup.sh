@@ -1,5 +1,5 @@
 # List of brew and npm packages to be installed
-BREW_PACKAGES=(ccat tree yarn)
+BREW_PACKAGES=(zsh-syntax-highlighting ccat tree yarn)
 NODE_PACKAGES=(nativefier trymodule internal-ip diff-so-fancy speed-test devtool)
 NODE_VERSION=6
 

@@ -4,19 +4,22 @@
  eval "$(direnv hook zsh)"
 
  # nvm hook
- . $(brew --prefix nvm)/nvm.sh
+ source $(brew --prefix nvm)/nvm.sh
  nvm use --delete-prefix
 } &> /dev/null
 
 # alias related
-[[ -r ~/.alias ]] && . ~/.alias
+[[ -r ~/.alias ]] && source ~/.alias
 
 # setup antigen
-[ -f ~/.antigenrc ] && . ~/.antigenrc
+[ -f ~/.antigenrc ] && source ~/.antigenrc
 
 # mount autocomplete scripts
-[ -f ~/.autocomplete ] && . ~/.autocomplete
+[ -f ~/.autocomplete ] && source ~/.autocomplete
 
 # for the look and feel
 autoload -U promptinit; promptinit
 prompt pure
+
+# for zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
