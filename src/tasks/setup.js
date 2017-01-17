@@ -1,4 +1,3 @@
-import log from 'logatim';
 import inquirer from 'inquirer';
 import { exec } from 'shelljs';
 
@@ -9,17 +8,17 @@ const OPTIONS = {
   EXIT: 'Exit',
 };
 
-class Setup {
-  inject(dependancies = []) {
+export default class Setup {
+  static inject(dependancies = []) {
     dependancies.forEach(command => exec(`brew install ${command}`));
   }
 
-  osx() {
+  static osx() {
     exec('softwareupdate -iva');
     exec('. ~/.osx');
   }
 
-  dev() {
+  static dev() {
     this.inject([
       'heroku-toolbelt',
       'mongodb',
@@ -32,13 +31,9 @@ class Setup {
     // 2. load mongodb now
     exec('ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents');
     exec('launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist');
-
-    // install nvm
-    exec('mkdir -p ~/.nvm');
-    exec('nvm install');
   }
 
-  prompt() {
+  static prompt() {
     inquirer
       .prompt([
         {
@@ -58,7 +53,7 @@ class Setup {
       });
   }
 
-  run(option) {
+  static run(option) {
     if (option === OPTIONS.EXIT) {
       return;
     }
@@ -74,5 +69,3 @@ class Setup {
     }
   }
 }
-
-export default new Setup();

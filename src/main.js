@@ -1,4 +1,4 @@
-import runner from './runner';
+import runner from './runner'
 
-runner.checkBrew();
-runner.start();
+runner.checkBrew()
+runner.start()

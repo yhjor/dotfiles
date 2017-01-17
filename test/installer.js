@@ -4,13 +4,13 @@ import installer from '../lib/tasks/installer';
 
 const dotsFolder = path.resolve(__dirname, '..', 'dots');
 
-test('should return correct js object', assert => {
+test('should return correct js object', (assert) => {
   const error = installer.readPackages();
   assert.equal(error.message, 'Missing argument: packagePath is not exist');
   assert.end();
 });
 
-test('should return correct js object', assert => {
+test('should return correct js object', (assert) => {
   const packages = installer.readPackages(`${dotsFolder}/.packages`);
 
   assert.ok('brew' in packages);

@@ -6,15 +6,15 @@ import { ArgumentNullError } from 'common-errors';
 
 const DOTS_NAME = 'dots';
 
-class Symlink {
-  link(targetFolder) {
+export default class Symlink {
+  static link(targetFolder) {
     if (!targetFolder) {
       throw new ArgumentNullError('targetFolder');
     }
 
     const files = fs.readdirSync(targetFolder);
 
-    files.forEach(file => {
+    files.forEach((file) => {
       const basename = path.basename(file);
       const filePath = path.join(targetFolder, basename);
 
@@ -24,9 +24,7 @@ class Symlink {
     });
   }
 
-  run() {
+  static run() {
     this.link(path.resolve(__dirname, '..', '..', DOTS_NAME));
   }
 }
-
-export default new Symlink();

@@ -3,8 +3,8 @@ import logatim from 'logatim';
 import inquirer from 'inquirer';
 import { ArgumentNullError } from 'common-errors';
 
-class Initializer {
-  receivePrompt() {
+export default class Initializer {
+  static receivePrompt() {
     return inquirer
       .prompt([
         {
@@ -21,17 +21,17 @@ class Initializer {
           type: 'input',
           name: 'node',
           message: 'Enter a Node version',
-          default: () => '5',
+          default: () => '7',
         },
       ]);
   }
 
-  generateFile(fileName, content) {
+  static generateFile(fileName, content) {
     if (!fileName) return Promise.reject(new ArgumentNullError('fileName'));
     if (!content) return Promise.reject(new ArgumentNullError('file content'));
 
     return new Promise((resolve, reject) => {
-      fs.writeFile(`${process.env.HOME}/${fileName}`, content, err => {
+      fs.writeFile(`${process.env.HOME}/${fileName}`, content, (err) => {
         if (err) {
           reject(`Fail to write ${fileName} ${err.stack}`);
           return;
@@ -42,7 +42,7 @@ class Initializer {
     });
   }
 
-  getProfile(email, name) {
+  static getProfile(email, name) {
     let profileContent = '[user]';
 
     if (email) profileContent += `\n  email = ${email}`;
@@ -51,7 +51,7 @@ class Initializer {
     return profileContent;
   }
 
-  generate() {
+  static generate() {
     return this.receivePrompt()
       .then(selection => Promise.all([
         this.generateFile('.nvmrc', selection.node),
@@ -59,16 +59,15 @@ class Initializer {
       ]));
   }
 
-  run() {
+  static run() {
     this.generate()
-      .then(results => {
+      .then((results) => {
         logatim.setLevel('info');
         results.forEach(result => logatim.green.info(result));
       })
-      .catch(errors => {
+      .catch((errors) => {
         errors.forEach(error => logatim.red.warn(error));
       });
   }
 }
 
-export default new Initializer();

@@ -6,27 +6,16 @@ import logatim from 'logatim';
 import initializer from './tasks/initializer';
 import symlink from './tasks/symlink';
 import setup from './tasks/setup';
-import installer from './tasks/installer';
-import cli from './tasks/cli';
 
 export const OPTIONS = {
   INIT: 'Initialize:\t~/.nvmrc and ./gituser',
   SYMLINK: 'Symlink:\tdotfiles from ./dots to ~/',
   SETUP: 'Setup:\tOSX configs, plugins and Development tools',
-  INSTALL: 'Install:\tBrew, Atom and Node packages that defined in ~/.packages',
   EXIT: 'Exit',
 };
 
-class Runner {
-  checkBrew() {
-    if (!which('brew')) {
-      logatim.yellow.warn('Installing brew:');
-      exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"');
-      exit(1);
-    }
-  }
-
-  isFirstTimeRun() {
+export default class Runner {
+  static isFirstTimeRun() {
     try {
       fs.statSync(`${process.env.HOME}/.gituser`);
       fs.statSync(`${process.env.HOME}/.nvmrc`);
@@ -37,16 +26,7 @@ class Runner {
     return false;
   }
 
-  start() {
-    if (!cli.inputMatch()) {
-      this.interactive();
-      return;
-    }
-
-    cli.run();
-  }
-
-  interactive() {
+  static start() {
     inquirer
       .prompt([
         {
@@ -57,7 +37,6 @@ class Runner {
             OPTIONS.INIT,
             OPTIONS.SYMLINK,
             OPTIONS.SETUP,
-            OPTIONS.INSTALL,
             OPTIONS.EXIT,
           ],
         },
@@ -67,7 +46,7 @@ class Runner {
       });
   }
 
-  dispatchAction(option) {
+  static dispatchAction(option) {
     if (option === OPTIONS.EXIT) {
       return;
     }
@@ -83,11 +62,6 @@ class Runner {
     if (option === OPTIONS.SETUP) {
       setup.prompt();
     }
-
-    if (option === OPTIONS.INSTALL) {
-      installer.prompt();
-    }
   }
 }
 
-export default new Runner();
