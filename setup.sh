@@ -1,6 +1,6 @@
 # List of brew and npm packages to be installed
 BREW_PACKAGES=(zsh-syntax-highlighting ccat tree yarn)
-NODE_PACKAGES=(internal-ip diff-so-fancy speed-test)
+NODE_PACKAGES=(pure-prompt internal-ip diff-so-fancy speed-test)
 NODE_VERSION=7
 
 #
