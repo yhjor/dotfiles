@@ -18,8 +18,9 @@
 
 ### Before Start
 
-1. `. setup.sh`
-2. `npm link`
+`. setup.sh`
+
+It will install all necessary packages for MacOS such as brew and npm.
 
 ## The dot commands
 
