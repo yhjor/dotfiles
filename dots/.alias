@@ -1,14 +1,14 @@
 # quick dotfiles access
 alias .reload='. ~/.zshrc'
-alias .custom='atom ~/.custom'
-alias .zshrc='atom ~/.zshrc'
-alias .gitconfig='atom ~/.gitconfig'
-alias .gituser='atom ~/.gituser'
-alias .alias='atom ~/.alias'
-alias .nvmrc='atom ~/.nvmrc'
-alias .osx='atom ~/.osx'
-alias .packages='atom ~/.packages'
-alias .snippets='atom ~/.atom/snippets.cson'
+alias .custom='code ~/.custom'
+alias .zshrc='code ~/.zshrc'
+alias .gitconfig='code ~/.gitconfig'
+alias .gituser='code ~/.gituser'
+alias .alias='code ~/.alias'
+alias .nvmrc='code ~/.nvmrc'
+alias .osx='code ~/.osx'
+alias .packages='code ~/.packages'
+alias .snippets='code ~/.atom/snippets.cson'
 
 # cli shortcut related
 alias lint='./node_modules/.bin/eslint'
@@ -18,15 +18,18 @@ alias g=git
 alias gh=github
 alias mc='./node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register --require babel-polyfill --recursive'
 alias bn='babel-node'
-alias n='npm'
-alias nra='npm-run-all'
+alias sl=serverless
 
 # npm and node shortcut related
 alias nr='npm run'
-alias save='npm i --save'
-alias save-dev='npm i --save-dev'
-alias save-g='npm i -g'
+alias save='yarn add'
+alias save-dev='yarn add --dev'
+alias save-g='yarn global add'
 alias ni='node-inspector --preload=false &'
 alias nd='node --debug'
 alias try=trymodule
 alias nn='node-nightly --inspect --debug-brk'
+
+# application related
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=$TMPDIR/chrome-profiling --no-default-browser-check --incognito'
+alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=$TMPDIR/chrome-profiling --no-default-browser-check --disable-web-security --auto-open-devtools-for-tabs --incognito'

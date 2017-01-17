@@ -11,7 +11,6 @@ const DOTS_NAME = 'dots';
 const OPTIONS = {
   ALL: 'All',
   BREW: 'Install software with Brew',
-  ATOM: 'Install Atom packages',
   NODE: 'Install Node packages',
   EXIT: 'Exit',
 };
@@ -35,12 +34,8 @@ class Installer {
     (this.packages.cask || []).forEach(caskPackage => exec(`brew cask install ${caskPackage}`));
   }
 
-  atom() {
-    (this.packages.apm || []).forEach(apmPackage => exec(`apm install ${apmPackage}`));
-  }
-
   node() {
-    (this.packages.npm || []).forEach(npmPackage => exec(`npm install -g ${npmPackage}`));
+    (this.packages.npm || []).forEach(npmPackage => exec(`yarn global add ${npmPackage}`));
   }
 
   prompt() {
@@ -53,7 +48,6 @@ class Installer {
           choices: [
             OPTIONS.ALL,
             OPTIONS.BREW,
-            OPTIONS.ATOM,
             OPTIONS.NODE,
             OPTIONS.EXIT,
           ],
@@ -73,10 +67,6 @@ class Installer {
 
     if (fullInstall || option === OPTIONS.BREW) {
       this.brew();
-    }
-
-    if (fullInstall || option === OPTIONS.ATOM) {
-      this.atom();
     }
 
     if (fullInstall || option === OPTIONS.NODE) {
