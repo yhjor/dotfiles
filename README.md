@@ -13,14 +13,15 @@
 - zsh, antigen and it's plugin
 - set of shell alias
 - configurable OSX settings
-- a packages definition file of atom/brew/cask/npm/etc with auto installation
-- atom's configs
+- a packages definition file of brew/yarn/etc with auto installation
 
 ### Before Start
 
-`. setup.sh`
+`source setup.sh`
 
 It will install all necessary packages for MacOS such as brew and npm.
+
+After installation: `yarn link`
 
 ## The dot commands
 
@@ -39,10 +40,6 @@ Symlink all dotfiles makes editing easy:
 Switching from bash to zsh is necessary, Sorry :)
 
 ![Alt text](docs/setup.png?raw=true "setup")
-
-Installing packages defined in dots/.packages:
-
-![Alt text](docs/install.png?raw=true "install")
 
 ## The dot files
 
@@ -74,28 +71,6 @@ Installing packages defined in dots/.packages:
    	diffs = "!git diff --color $@ | diff-so-fancy"
  	  bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
 		clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
-
-### Packages (dots/.packages)
-
-Written in YAML format.
-
-	'apm':
-    - linter-eslint
-    - react
-
-	'brew':
-	  - git
-	  - mongodb
-
-	'cask':
-	  - java
-	  - google-chrome
-	  - atom
-	  - slack
-
-	'npm':
-	  - babel-cli
-	  - webdriverio
 
 ### More
 
