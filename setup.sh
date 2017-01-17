@@ -11,7 +11,7 @@ if [ -z "$NVM_DIR" -a -d "$HOME/.nvm" ] ; then
   export NVM_DIR="$HOME/.nvm"
   . "$(brew --prefix nvm)/nvm.sh"
 
-  nvm install 6
+  nvm install 7
 fi
 
 # Setup Zsh
