@@ -1,6 +1,7 @@
 # General
 node_modules
 .npmrc
+.vscode
 
 # Built files
 lib
