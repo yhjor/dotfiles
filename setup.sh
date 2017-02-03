@@ -3,6 +3,11 @@ BREW_PACKAGES=(zsh-syntax-highlighting ccat tree yarn)
 NODE_PACKAGES=(pure-prompt internal-ip diff-so-fancy speed-test)
 NODE_VERSION=7
 
+# Ensure admin account is accessible to brew pacakges
+sudo -v
+sudo chgrp -R admin /usr/local
+sudo chmod -R g+w /usr/local
+
 #
 # Check if Homebrew is installed
 #

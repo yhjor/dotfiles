@@ -1,3 +1,5 @@
+export PATH="/usr/local/sbin:$PATH"
+
 # output without any warning
 {
  # direnv hook
