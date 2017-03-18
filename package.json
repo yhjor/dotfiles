@@ -1,6 +1,6 @@
 {
   "name": "dotfiles",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Personal dotfiles to kickstart shell and development settings",
   "main": "lib/main.js",
   "bin": {
