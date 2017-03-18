@@ -57,4 +57,4 @@ do
 done
 
 # Enable the `dot` command by linking up current dotfiles to be executable
-yarn link
+yarn global add @yhjor/dotfiles

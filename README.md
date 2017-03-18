@@ -21,7 +21,7 @@
 
 It will install all necessary packages for MacOS such as brew and npm.
 
-After installation: `yarn link`
+After installation: `yarn link` or `yarn global add @yhjor/dotfiles`
 
 ## The dot commands
 
