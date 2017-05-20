@@ -13,8 +13,11 @@ export PATH="/usr/local/sbin:$PATH"
 # alias related
 [[ -r ~/.alias ]] && source ~/.alias
 
-# setup antigen
-[ -f ~/.antigenrc ] && source ~/.antigenrc
+# for z
+. /usr/local/etc/profile.d/z.sh
+
+# for zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # mount autocomplete scripts
 [ -f ~/.autocomplete ] && source ~/.autocomplete

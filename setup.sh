@@ -1,12 +1,14 @@
 # List of brew and npm packages to be installed
-BREW_PACKAGES=(zsh-syntax-highlighting ccat tree yarn)
+BREW_PACKAGES=(z zsh zsh-syntax-highlighting zsh-completions ccat tree yarn)
 NODE_PACKAGES=(pure-prompt internal-ip diff-so-fancy speed-test)
 NODE_VERSION=7
 
 # Ensure admin account is accessible to brew pacakges
 sudo -v
-sudo chgrp -R admin /usr/local
-sudo chmod -R g+w /usr/local
+softwareupdate -iva
+xcode-select --install
+# sudo chgrp -R admin /usr/local
+# sudo chmod -R g+w /usr/local
 
 #
 # Check if Homebrew is installed
@@ -19,7 +21,6 @@ brew upgrade
 # Setup Zsh
 if [ -n "$BASH_VERSION" ]; then
   brew install zsh
-  brew install antigen
   brew install fzf
 
   sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
@@ -34,8 +35,10 @@ do
 done
 
 which -s mongod || brew install mongodb
+brew service start mongodb
 which -s redis-cli || brew install redis
 which -s java || brew cask install java
+which -s gcloud || brew cask install google-cloud.sdk
 
 # Setup Nvm and Npm
 if [ -z "$NVM_DIR" -a -d "$HOME/.nvm" ] ; then
@@ -55,6 +58,8 @@ for package in "${NODE_PACKAGES[@]}"
 do
   which "$package" || yarn global add "$package"
 done
+
+source .osx
 
 # Enable the `dot` command by linking up current dotfiles to be executable
 yarn global add @yhjor/dotfiles

@@ -10,7 +10,7 @@
 
 ### What's inside
 
-- zsh, antigen and it's plugin
+- zsh and plugins
 - set of shell alias
 - configurable OSX settings
 - a packages definition file of brew/yarn/etc with auto installation

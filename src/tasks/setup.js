@@ -20,12 +20,10 @@ export default class Setup {
 
   static dev() {
     this.inject([
-      'heroku-toolbelt',
       'mongodb',
     ]);
 
     exec('xcode-select --install');
-    exec('heroku update');
 
     // 1. launch start mongodb at login
     // 2. load mongodb now
