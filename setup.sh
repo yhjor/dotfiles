@@ -1,6 +1,6 @@
 # List of brew and npm packages to be installed
-BREW_PACKAGES=(z zsh zsh-syntax-highlighting zsh-completions ccat tree yarn)
-NODE_PACKAGES=(pure-prompt internal-ip diff-so-fancy speed-test)
+BREW_PACKAGES=(z zsh zsh-syntax-highlighting zsh-completions zsh-autosuggestions ccat tree yarn)
+NODE_PACKAGES=(pure-prompt internal-ip diff-so-fancy speed-test slap git-recall)
 NODE_VERSION=7
 
 # Ensure admin account is accessible to brew pacakges
@@ -38,7 +38,7 @@ which -s mongod || brew install mongodb
 brew service start mongodb
 which -s redis-cli || brew install redis
 which -s java || brew cask install java
-which -s gcloud || brew cask install google-cloud.sdk
+which -s yarn || brew install yarn --ignore-dependencies
 
 # Setup Nvm and Npm
 if [ -z "$NVM_DIR" -a -d "$HOME/.nvm" ] ; then
