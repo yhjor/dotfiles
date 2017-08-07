@@ -1,5 +1,5 @@
 # List of brew and npm packages to be installed
-BREW_PACKAGES=(z zsh zsh-syntax-highlighting zsh-completions zsh-autosuggestions ccat tree yarn)
+BREW_PACKAGES=(z zsh zsh-syntax-highlighting zsh-completions zsh-autosuggestions ccat tree yarn exa)
 NODE_PACKAGES=(pure-prompt internal-ip diff-so-fancy speed-test slap git-recall)
 NODE_VERSION=7
 
