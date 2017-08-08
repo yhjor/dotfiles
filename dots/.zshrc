@@ -1,4 +1,5 @@
 export PATH="/usr/local/sbin:$PATH"
+export ZSH_CUSTOM="spaceship"
 
 # output without any warning
 {
@@ -34,3 +35,6 @@ prompt pure
 
 # extend paths
 export PATH="$PATH:`yarn global bin`"
+
+
+source "spaceship/themes/spaceship.zsh-theme"
