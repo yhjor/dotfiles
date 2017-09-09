@@ -2,8 +2,8 @@
 	ignorecase = false
 
 [branch]
-  autosetuprebase = always
-  autosetupmerge = always
+	autosetuprebase = always
+	autosetupmerge = always
 
 [apply]
   whitespace = fix
@@ -11,18 +11,15 @@
 [push]
   default = current
 
-[include]
-  path = ~/.gituser
-
 [merge]
   tool = opendiff
 
 [alias]
-  # Short alias
-  s = status --short
-  co = !sh -c \"git checkout $(git branch | fzf)\"
-  mt = mergetool
-  cp = cherry-pick
+	# Short alias
+	s = status --short
+	co = !sh -c \"git checkout $(git branch | fzf)\"
+	mt = mergetool
+	cp = cherry-pick
 
 	# Human alias
 	diffs = "!git diff --color | diff-so-fancy"
@@ -36,18 +33,21 @@
 	rename = branch -m
 	current = rev-parse --symbolic-full-name --abbrev-ref HEAD
 	logs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  tracking = branch -vv
+	tracking = branch -vv
 
 	# Function alias
-  b = !sh -c \"git rev-parse --abbrev-ref HEAD | pbcopy\"
-  compare = !sh -c \"git fetch && git diff origin/$1..HEAD --color | diff-so-fancy\"
-  recent = !sh -c \"git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"\"
+	b = !sh -c \"git rev-parse --abbrev-ref HEAD | pbcopy\"
+	compare = !sh -c \"git fetch && git diff origin/$1..HEAD --color | diff-so-fancy\"
+	recent = !sh -c \"git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"\"
 	today = !sh -c \"git log --since=00:00:00 --all --no-merges --oneline\"
 	graph = !sh -c \"git log --graph --all --decorate --stat --date=iso\"
 	search = !sh -c \"git log --oneline | grep $1\"
-  checkout-origin = !sh -c \"git checkout -b $1 origin/$1\"
+	checkout-origin = !sh -c \"git checkout -b $1 origin/$1\"
 	pull-latest = !sh -c \"git pull origin $(git rev-parse --abbrev-ref HEAD)\"
-  sync = !sh -c \"git pull-latest && git push origin\"
-  delete = !sh -c \"git branch -D $(git branch | fzf) && git branch\"
+	sync = !sh -c \"git pull-latest && git push origin\"
+	delete = !sh -c \"git branch -D $(git branch | fzf) && git branch\"
 	track = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
 	clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
+[user]
+	name = George Jor
+	email = yhjor@me.com

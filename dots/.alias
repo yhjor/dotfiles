@@ -1,35 +1,9 @@
-# quick dotfiles access
-alias .reload='. ~/.zshrc'
-alias .custom='code ~/.custom'
-alias .zshrc='code ~/.zshrc'
-alias .gitconfig='code ~/.gitconfig'
-alias .gituser='code ~/.gituser'
-alias .alias='code ~/.alias'
-alias .nvmrc='code ~/.nvmrc'
-alias .osx='code ~/.osx'
-alias .packages='code ~/.packages'
-alias .snippets='code ~/.atom/snippets.cson'
-
-# cli shortcut related
-alias lint='./node_modules/.bin/eslint'
-alias da='direnv allow'
-alias x='gitx'
+alias .reload='source ~/.zshrc'
+alias b=brew
 alias g=git
-alias gh=github
-alias mc='./node_modules/.bin/mocha --timeout 15000 --compilers js:babel-core/register --require babel-polyfill --recursive'
-alias bn='babel-node'
-alias sl=serverless
-
-# npm and node shortcut related
+alias n=node
+alias y=yarn
+alias c=ccat
+alias f=fzf
+alias l=exa
 alias nr='npm run'
-alias save='yarn add'
-alias save-dev='yarn add --dev'
-alias save-g='yarn global add'
-alias ni='node-inspector --preload=false &'
-alias nd='node --debug'
-alias try=trymodule
-alias nn='node-nightly --inspect --debug-brk'
-
-# application related
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=$TMPDIR/chrome-profiling --no-default-browser-check --incognito'
-alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=$TMPDIR/chrome-profiling --no-default-browser-check --disable-web-security --auto-open-devtools-for-tabs --incognito'

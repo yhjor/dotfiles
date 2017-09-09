@@ -1,79 +1,45 @@
-# Automate your dots
+# Speed up your dots
 
-<a href="https://travis-ci.org/yhjor1212/dotfiles">
-	<img alt="Travis Status" src="https://img.shields.io/travis/yhjor1212/dotfiles.svg">
-</a>
+Designed for simplicity and productivity to aggregate all the necessary configurations under version control
 
-- Aggregate your preferences and configurations under version control
-- Abstract complicated shell scripts with modern ES2015 in Node.js
-- Design for simplicity and productivity for Node.js development
+## What's inside?
 
-### What's inside
+- Command alias (dots/.alias)
+- Git alias (dots/.gitconfig)
+- Vim's preferences (dots/.gitconfig)
+- Trasform your terminal (setup/terminal.sh)
+	- Z Shell (ZSH): Empowered by the developer community
+	- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh): The most prominent plugins for ZSH
+	- [fzf](https://github.com/junegunn/fzf): An extremely fast file finder
+	- [z](https://github.com/rupa/z): Jump around directories with ease
+	- [zsh-completions](https://github.com/zsh-users/zsh-completions): Auto complete for ZSH
+	- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions): Fish-like autosuggestions for zsh
+	- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): Fish shell like syntax highlighting for ZSH
+	- [pure](https://github.com/sindresorhus/pure): Pretty, minimal and fast ZSH prompt
+- Equip your weapons (setup/tools.sh)
+	- [ccat](https://github.com/jingweno/ccat): Colorizing `cat`
+	- [exa](https://github.com/ogham/exa): Replacement for 'ls' written in Rust
+	- [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy): Make your diff's human readable instead of machine readable
+	- [public-ip-cli](https://github.com/sindresorhus/public-ip-cli): Get your public IP address with the command `public-ip`
+	- [internal-ip-cli](https://github.com/sindresorhus/internal-ip-cli): Get your internal IP address with the command `internal-ip`
+	- [speed-test](https://github.com/sindresorhus/speed-test): Test your internet connection speed and ping using speedtest.net from the CLI
+	- tree: Show the folder structure like a tree
+	- [git-recall](https://github.com/Fakerr/git-recall): An interactive way to peruse your git history from the terminal
+- Optimized OSX settings (setup/osx.sh)
+	- Set a blazingly fast keyboard repeat rate
+	- Avoid automatically rearrange Spaces based on most recent use
+	- Disable auto-correct, smart quotes, smart dashes
+	- Disable the warning when changing a file extension
+	- Allow text selection in Quick Look
+	- Minimize windows into their application’s icon
 
-- zsh and plugins
-- set of shell alias
-- configurable OSX settings
-- a packages definition file of brew/yarn/etc with auto installation
 
-### Before Start
+## Installation
 
 `source setup.sh`
 
-It will install all necessary packages for MacOS such as brew and npm.
+## More
 
-After installation: `yarn link` or `yarn global add @yhjor/dotfiles`
-
-## The dot commands
-
-Just execute `dot` in your shell, an interactive command will be shown.
-
-![Alt text](docs/main.png?raw=true "dot command")
-
-And you might need to initialize it once since different machines might have different configs:
-
-![Alt text](docs/init.png?raw=true "init")
-
-Symlink all dotfiles makes editing easy:
-
-![Alt text](docs/symlink.png?raw=true "symlink")
-
-Switching from bash to zsh is necessary, Sorry :)
-
-![Alt text](docs/setup.png?raw=true "setup")
-
-## The dot files
-
-### OSX Settings (dots/.osx)
-
-	# Disable the sound effects on boot
-	sudo nvram SystemAudioVolume=" "
-
-	# Disable smart dashes as they’re annoying when typing code
-	# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-### Git Config (dots/.gitconfig)
-
-	[branch]
-	  autosetuprebase = always
-	  autosetupmerge = always
-
-	[apply]
-	  whitespace = fix
-
-  [push]
-    default = current
-
-	[include]
-   	path = ~/.gituser
-
-	[alias]
-	  co = !sh -c \"git checkout $(git branch | fzf)\"
-   	diffs = "!git diff --color $@ | diff-so-fancy"
- 	  bo = !sh -c \"git fetch origin $(git current):feature/$1 && git checkout feature/$1 && git branch -u origin/$(git current) feature/$1\"
-		clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
-
-### More
-
-Take a look inside `./dots`
+Take a look inside `setup.sh` and `./dots`
 
 Enjoy!

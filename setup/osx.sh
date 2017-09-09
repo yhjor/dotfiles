@@ -25,9 +25,6 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 # Disable keyboard auto correct
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Show the ~/Library folder
-chflags nohidden ~/Library
-
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
