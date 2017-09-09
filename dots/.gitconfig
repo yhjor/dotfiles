@@ -1,5 +1,27 @@
+[user]
+	name = George Jor
+	email = yhjor@me.com
+
 [core]
 	ignorecase = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[color]
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = 227
+	frag = magenta bold
+	commit = 227 bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [branch]
 	autosetuprebase = always
@@ -22,7 +44,6 @@
 	cp = cherry-pick
 
 	# Human alias
-	diffs = "!git diff --color | diff-so-fancy"
 	pop = stash pop
 	discard = checkout --
 	amend = commit --amend
@@ -37,7 +58,7 @@
 
 	# Function alias
 	b = !sh -c \"git rev-parse --abbrev-ref HEAD | pbcopy\"
-	compare = !sh -c \"git fetch && git diff origin/$1..HEAD --color | diff-so-fancy\"
+	compare = !sh -c \"git fetch && git diff\"
 	recent = !sh -c \"git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"\"
 	today = !sh -c \"git log --since=00:00:00 --all --no-merges --oneline\"
 	graph = !sh -c \"git log --graph --all --decorate --stat --date=iso\"
@@ -48,6 +69,3 @@
 	delete = !sh -c \"git branch -D $(git branch | fzf) && git branch\"
 	track = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
 	clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
-[user]
-	name = George Jor
-	email = yhjor@me.com
