@@ -2,6 +2,10 @@
 
 Designed for simplicity and productivity to aggregate all the necessary configurations under version control
 
+## Installation
+
+`source setup.sh`
+
 ## What's inside?
 
 - Command alias ([dots/.alias](https://github.com/yhjor1212/dotfiles/blob/master/dots/.alias))
@@ -32,10 +36,6 @@ Designed for simplicity and productivity to aggregate all the necessary configur
 	- [speed-test](https://github.com/sindresorhus/speed-test): Test your internet connection speed and ping using speedtest.net from the CLI
 	- [tree](http://mama.indstate.edu/users/ice/tree/): Show the folder structure like a tree
 	- [git-recall](https://github.com/Fakerr/git-recall): An interactive way to peruse your git history from the terminal
-
-## Installation
-
-`source setup.sh`
 
 ## More
 
