@@ -12,3 +12,8 @@ for package in "${NODE_PACKAGES[@]}"
 do
   which "$package" || yarn global add "$package"
 done
+
+
+# Install MongoDB and Redis for web development
+which -s mongod || brew install mongodb && brew service start mongodb
+which -s redis-cli || brew install redis && brew services start redis
