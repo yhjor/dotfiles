@@ -7,6 +7,13 @@ Designed for simplicity and productivity to aggregate all the necessary configur
 - Command alias ([dots/.alias](https://github.com/yhjor1212/dotfiles/blob/master/dots/.alias))
 - Git alias ([dots/.gitconfig](https://github.com/yhjor1212/dotfiles/blob/master/dots/.gitconfig))
 - Vim's preferences ([dots/.vimrc](https://github.com/yhjor1212/dotfiles/blob/master/dots/.vimrc))
+- Optimized OSX settings ([setup/osx.sh](https://github.com/yhjor1212/dotfiles/blob/master/setup/osx.sh))
+	- Set a blazingly fast keyboard repeat rate
+	- Avoid automatically rearrange Spaces based on most recent use
+	- Disable auto-correct, smart quotes, smart dashes
+	- Disable the warning when changing a file extension
+	- Allow text selection in Quick Look
+	- Minimize windows into their application’s icon
 - Trasform your terminal ([setup/terminal.sh](https://github.com/yhjor1212/dotfiles/blob/master/setup/terminal.sh))
 	- [Zsh](http://www.zsh.org/): The empowered shell by the developer communities
 	- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh): The most prominent plugins for Zsh
@@ -25,14 +32,6 @@ Designed for simplicity and productivity to aggregate all the necessary configur
 	- [speed-test](https://github.com/sindresorhus/speed-test): Test your internet connection speed and ping using speedtest.net from the CLI
 	- [tree](http://mama.indstate.edu/users/ice/tree/): Show the folder structure like a tree
 	- [git-recall](https://github.com/Fakerr/git-recall): An interactive way to peruse your git history from the terminal
-- Optimized OSX settings ([setup/osx.sh](https://github.com/yhjor1212/dotfiles/blob/master/setup/osx.sh))
-	- Set a blazingly fast keyboard repeat rate
-	- Avoid automatically rearrange Spaces based on most recent use
-	- Disable auto-correct, smart quotes, smart dashes
-	- Disable the warning when changing a file extension
-	- Allow text selection in Quick Look
-	- Minimize windows into their application’s icon
-
 
 ## Installation
 
