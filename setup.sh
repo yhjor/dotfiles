@@ -28,7 +28,3 @@ fi
 
 # Brew and Node global packages
 source setup/tools.sh
-
-# Web Development
-which -s mongod || brew install mongodb && brew service start mongodb
-which -s redis-cli || brew install redis && brew services start redis
