@@ -4,7 +4,7 @@ Designed for simplicity and productivity to aggregate all the necessary configur
 
 ## What's inside?
 
-- Command alias (dots/.alias)
+- Command alias ([dots/.alias](/blob/master/dots/.alias))
 - Git alias (dots/.gitconfig)
 - Vim's preferences (dots/.gitconfig)
 - Trasform your terminal (setup/terminal.sh)
