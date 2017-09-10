@@ -5,7 +5,7 @@ Designed for simplicity and productivity to aggregate all the necessary configur
 ## What's inside?
 
 - Command alias ([dots/.alias](https://github.com/yhjor1212/dotfiles/blob/master/dots/.alias))
-- Git alias ([dots/.gitconfig](https://github.com/yhjor1212/dotfiles/blob/master/dots/.gitconfit))
+- Git alias ([dots/.gitconfig](https://github.com/yhjor1212/dotfiles/blob/master/dots/.gitconfig))
 - Vim's preferences ([dots/.vimrc](https://github.com/yhjor1212/dotfiles/blob/master/dots/.vimrc))
 - Trasform your terminal ([setup/terminal.sh](https://github.com/yhjor1212/dotfiles/blob/master/setup/terminal.sh))
 	- Z Shell (ZSH): Empowered by the developer community
