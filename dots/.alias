@@ -7,3 +7,5 @@ alias c=ccat
 alias f=fzf
 alias l=exa
 alias nr='npm run'
+alias ..='cd ..'
+alias -- -='cd -'
