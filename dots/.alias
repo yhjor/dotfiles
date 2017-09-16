@@ -5,6 +5,7 @@ alias n=node
 alias y=yarn
 alias c=ccat
 alias f=fzf
+alias v=vim
 alias ls=exa
 alias speed=speed-test
 alias nr='npm run'
