@@ -13,7 +13,9 @@ do
   which "$package" || yarn global add "$package"
 done
 
-
-# Install MongoDB and Redis for web development
+# Install development tools
 which -s mongod || brew install mongodb && brew service start mongodb
 which -s redis-cli || brew install redis && brew services start redis
+which -s aws || brew install awscli
+which -s gcloud || brew cask install google-cloud-sdk
+which -s fuck || brew install the fuck

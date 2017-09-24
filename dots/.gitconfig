@@ -69,3 +69,8 @@
 	delete = !sh -c \"git branch -D $(git branch | fzf) && git branch\"
 	track = !sh -c \"git branch $(git current) --set-upstream-to origin/$1\"
 	clear-merged = !sh -c \"git branch --merged | grep -E 'feature/|fix/' | grep -v \\* | xargs -n 1 git branch -d\"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

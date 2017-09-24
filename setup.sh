@@ -29,6 +29,3 @@ source setup/vim.sh
 
 # Brew and Node global packages
 source setup/tools.sh
-
-# Tools for development (Optional)
-# source setup/dev.sh
