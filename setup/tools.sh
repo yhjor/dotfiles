@@ -1,5 +1,5 @@
 BREW_PACKAGES=(ccat tree exa yarn)
-NODE_PACKAGES=(diff-so-fancy git-recall public-ip-cli internal-ip-cli speed-test)
+NODE_PACKAGES=(diff-so-fancy git-recall public-ip-cli internal-ip-cli speed-test vtop)
 
 # Install brew packages
 for package in "${BREW_PACKAGES[@]}"
