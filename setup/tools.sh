@@ -1,5 +1,5 @@
 BREW_PACKAGES=(ccat tree exa yarn)
-NODE_PACKAGES=(diff-so-fancy git-recall public-ip-cli internal-ip-cli speed-test vtop)
+NODE_PACKAGES=(diff-so-fancy git-recall public-ip-cli internal-ip-cli speed-test vtop tldr fkill-cli)
 
 # Install brew packages
 for package in "${BREW_PACKAGES[@]}"
