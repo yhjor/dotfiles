@@ -44,6 +44,16 @@ echo "
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "  >> ~/.zshrc
 
+# Install GoLang
+brew install go
+echo "
+# Golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+ulimit -n 8096
+" >> ~/.zshrc
+
 # Install nvm
 brew install nvm
 mkdir ~/.nvm
