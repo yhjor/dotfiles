@@ -1,4 +1,4 @@
-NODE_VERSION=8
+NODE_VERSION=9
 
 # Install zsh
 brew install zsh
