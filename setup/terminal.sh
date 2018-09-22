@@ -1,7 +1,13 @@
-NODE_VERSION=9
+function install_or_upgrade {
+    if brew ls --versions "$1" >/dev/null; then
+        HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$1"
+    else
+        HOMEBREW_NO_AUTO_UPDATE=1 brew install "$1"
+    fi
+}
 
 # Install zsh
-brew install zsh
+install_or_upgrade zsh
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
@@ -9,12 +15,12 @@ chsh -s /usr/local/bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install fuzzy search
-brew install fzf
+install_or_upgrade fzf
 /usr/local/opt/fzf/install
 source ~/.zshrc
 
 # Install z search
-brew install z
+install_or_upgrade z
 echo "
 # z | https://github.com/rupa/z
 source /usr/local/etc/profile.d/z.sh
@@ -22,7 +28,7 @@ source /usr/local/etc/profile.d/z.sh
 source ~/.zshrc
 
 # Install zsh-completions
-brew install zsh-completions
+install_or_upgrade zsh-completions
 echo "
 # zsh-completions | https://github.com/zsh-users/zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -30,7 +36,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 source ~/.zshrc
 
 # Install zsh-autosuggestions
-brew install zsh-autosuggestions
+install_or_upgrade zsh-autosuggestions
 echo "
 # zsh-autosuggestions | https://github.com/zsh-users/zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -38,14 +44,14 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zshrc
 
 # Install syntax highlight
-brew install zsh-syntax-highlighting
+install_or_upgrade zsh-syntax-highlighting
 echo "
 # zsh-syntax-highlighting | https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "  >> ~/.zshrc
 
 # Install GoLang
-brew install go
+install_or_upgrade go
 echo "
 # Golang
 export GOPATH=$HOME/go
@@ -53,25 +59,6 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 ulimit -n 8096
 " >> ~/.zshrc
-
-# Install nvm
-brew install nvm
-mkdir ~/.nvm
-echo "
-# nvm | https://github.com/creationix/nvm
-source $(brew --prefix nvm)/nvm.sh
-export NVM_DIR=~/.nvm
-" >> ~/.zshrc
-nvm install $NODE_VERSION
-
-# Install the terminal theme
-npm install -g pure-prompt
-echo '
-# pure | https://github.com/sindresorhus/pure
-autoload -U promptinit; promptinit
-prompt pure
-' >> ~/.zshrc
-source ~/.zshrc
 
 # Mount alias to shell profile
 echo "
