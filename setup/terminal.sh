@@ -50,6 +50,9 @@ echo "
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "  >> ~/.zshrc
 
+# Install https://github.com/BurntSushi/ripgrep
+install_or_upgrade ripgrep
+
 # Install GoLang
 install_or_upgrade go
 echo "
